@@ -12,6 +12,7 @@ import {
 import Home from './pages/Home.jsx';
 import Crypto from './pages/Crypto.jsx';
 import Saved from './pages/Saved.jsx';
+import Register from './pages/Register.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,12 +20,16 @@ const router = createBrowserRouter([
     element: <Home />,
     children:[
       {
-        path:"/",
+        path:"/crypto",
         element: <Crypto />
       },
       {
         path:"/saved",
         element: <Saved />
+      },
+      {
+        path:"/register",
+        element: <Register />
       },
     ]
   }
