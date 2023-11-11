@@ -5,7 +5,7 @@ import { CryptoContext } from "./../context/CryptoContext";
 
 const SearchInput = ({ handleSearch }) => {
   const [searchText, setSearchText] = useState("");
-  let { searchData, setCoinSearch } = useContext(CryptoContext);
+  let { searchData, setCoinSearch, setSearchData } = useContext(CryptoContext);
 
   let handleInput = (e) => {
     e.preventDefault();
@@ -14,10 +14,16 @@ const SearchInput = ({ handleSearch }) => {
     handleSearch(query);
   };
 
-  const selectCoin = (coin) => {
-    setCoinSearch();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleSearch(searchText);
   };
 
+  const selectCoin = (coin) => {
+    setCoinSearch(coin);
+    setSearchText("");
+    setSearchData();
+  };
 
   return (
     <>
@@ -25,6 +31,7 @@ const SearchInput = ({ handleSearch }) => {
         className="w-96 relative flex items-center
     ml-7 font-nunito
     "
+        onSubmit={handleSubmit}
       >
         <input
           type="text"
