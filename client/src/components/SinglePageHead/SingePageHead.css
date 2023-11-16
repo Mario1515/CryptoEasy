@@ -1,0 +1,25 @@
+.page-header {
+    position: relative;
+    margin-bottom: 45px;
+    padding: 150px 0 90px 0;
+    text-align: center;
+    background: #35bcbf;
+}
+
+.page-header h2,
+.page-header a {
+    color: black;
+    /* Other styles if needed */
+}
+
+.page-header a:hover {
+    /* Styles for the links on hover (optional) */
+    color: #555; /* Change text color on hover, if desired */
+}
+
+.page-header a:hover {
+    /* Styles for the links on hover (optional) */
+    /* You can add hover styles if needed */
+    text-decoration: none;
+    color: #555; /* Change text color on hover, if desired */
+}

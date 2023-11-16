@@ -1,7 +1,7 @@
 // table.jsx
 import React, { useContext } from "react";
 import { CryptoContext } from "../../context/CryptoContext";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./table.css"; // Custom styling
 
 const Table = () => {
@@ -46,15 +46,15 @@ const Table = () => {
                     alt={data.name}
                   />
                   <span>
-                    <Link to={`/${data.id}`} className="cursor-pointer">
+                    <NavLink to={`/${data.id}`} className="cursor-pointer">
                       {(data.symbol.toUpperCase())}
-                    </Link>
+                    </NavLink>
                   </span>
                 </td>
                 <td className="align-middle">
-                  <Link to={`/${data.id}`} className="cursor-pointer">
+                  <NavLink to={`/${data.id}`} className="cursor-pointer">
                     {data.name}
-                  </Link>
+                  </NavLink>
                 </td>
                 <td className="align-middle">
                   {new Intl.NumberFormat("en-IN", {

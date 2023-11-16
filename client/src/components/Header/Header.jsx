@@ -1,6 +1,6 @@
 // Header.jsx
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logoSvg from "../../assets/logo.svg";
 import CryptoWe from "../../assets/NewOne.png"
 
@@ -19,10 +19,10 @@ const Header = () => {
       </NavLink>
 			<div className="collapse navbar-collapse justify-content-between" id="navbarCollapse">
 				<div className="navbar-nav ml-auto">
-					<NavLink to="/" exact={true} className="nav-item nav-link" activeClassName="active">Home</NavLink>
-					<NavLink to="/crypto" className="nav-item nav-link" activeClassName="active">Crypto</NavLink>
-					<NavLink to="/teachers" className="nav-item nav-link" activeClassName="active">Teachers</NavLink>
-					<NavLink to="/contact" className="nav-item nav-link" activeClassName="active">Contact</NavLink>
+					<NavLink to="/" exact="true" className="nav-item nav-link">Home</NavLink>
+					<NavLink to="/crypto" className="nav-item nav-link" >Crypto</NavLink>
+					<NavLink to="/login" className="nav-item nav-link" >Login</NavLink>
+					<NavLink to="/register" className="nav-item nav-link" >Register</NavLink>
 
 					</div>
           </div>

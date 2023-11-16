@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Hero.css';
 import hero from '../../assets/hero.avif';
 
@@ -10,13 +10,13 @@ const Hero = () => {
           <div className="row align-items-center">
             <div className="col-sm-12 col-md-6">
               <div className="hero-text">
-                <h1>Yoga Practice For Good Health</h1>
+                <h1>Unleash the Future with Crypto Easy</h1>
                 <p>
-                  Join our classes to attain your desired health and body goals. It is all about living your best life and we're here to help!
+                Join Crypto Easy today and be part of a community that's shaping the future of finance!
                 </p>
                 <div className="hero-btn">
-                  <Link className="btn" to="/classes">Explore Classes</Link>
-                  <Link className="btn" to="/contact">Contact Us</Link>
+                  <NavLink className="btn" to="/classes">Explore Crypto</NavLink>
+                  <NavLink className="btn" to="/contact">Contact Us</NavLink>
                 </div>
               </div>
             </div>

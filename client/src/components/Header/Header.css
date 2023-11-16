@@ -2,7 +2,7 @@
 
 .page-header h2 {
   position: relative;
-  color: #343148;
+  color: #41506b;
   font-size: 60px;
   font-weight: 700;
 }
@@ -26,7 +26,7 @@
   top: -2px;
   right: -7px;
   text-align: center;
-  color: #343148;
+  color: #41506b;
 }
 
 .page-header a:last-child::after {
