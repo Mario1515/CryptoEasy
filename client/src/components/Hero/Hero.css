@@ -4,6 +4,7 @@
     padding: 90px 0;
     background: #00FFFF;
     overflow: hidden;
+    margin-top: 130px; /* Adjust the value to set the desired distance from the top */
 }
 
 .hero .container-fluid {
@@ -49,15 +50,15 @@
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 1px;
-    color: #F7CAC9;
+    color: #ffffff;
     background: #343148;
     border-radius: 0;
     transition: .3s;
 }
 
 .hero .hero-btn .btn:hover {
-    color: #3726a8;
-    background: #ffffff;
+    color: #ffffff;
+    background: #11999e;
 }
 
 .hero .hero-btn .btn:first-child {

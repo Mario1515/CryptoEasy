@@ -1,8 +1,9 @@
 // table.jsx
 import React, { useContext } from "react";
 import { CryptoContext } from "../../context/CryptoContext";
-import { NavLink } from "react-router-dom";
+import { NavLink, redirect } from "react-router-dom";
 import "./table.css"; // Custom styling
+import ErrorTable from "./ErrorTable";
 
 const Table = () => {
   let { cryptoData } = useContext(CryptoContext);
@@ -79,7 +80,7 @@ const Table = () => {
             ))}
           </tbody>
         </table>
-      ) : null}
+      ) : <ErrorTable />}
     </div>
 
   );

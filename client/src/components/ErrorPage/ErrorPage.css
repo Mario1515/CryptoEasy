@@ -1,0 +1,22 @@
+.section-header.text-left {
+    margin-top: 300px;
+    margin: auto; 
+}
+.about-text.error {
+	text-align:center;
+    margin-top: 130px;
+    margin-bottom: 130px;
+}
+
+.about-text .btn {
+    margin-top: 100px !important; /* Adjust the top margin to change the button's position */
+    color: #ffffff !important;/* Change the text color of the button */
+    padding: 1x 20px; /* Adjust the padding for better button appearance */
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s; /* Add a smooth transition for hover effect */
+}
+
+.about-text .btn:hover {
+    background-color: #11999e !important; /* Change the hover color of the button */
+}
