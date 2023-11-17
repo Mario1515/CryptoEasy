@@ -22,7 +22,6 @@ const Login = () => {
       .login(userData)
       .then((authData) => {
         userLogin(authData);
-        console.log("User Successfully logged in");
         navigate("/");
       })
       .catch((err) => {

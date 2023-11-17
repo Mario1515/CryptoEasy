@@ -41,7 +41,6 @@ const CreateNFT = () => {
 
           nftService.create(nftData)
           .then(result => {
-              console.log(result)
               navigate("/allnfts");
           });
 

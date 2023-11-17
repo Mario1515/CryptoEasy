@@ -12,6 +12,7 @@ import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Logout from "./components/User/Logout/Logout";
 import AllNFTs from "./components/NFTs/AllNFTs/AllNFTs";
 import CreateNFT from "./components/NFTs/CreateNFT/CreateNFT";
+import NFTDetails from "./components/NFTs/NFTDetails/NFTDetails"
 
 //import { AuthContext } from "../src/context/AuthContext";
 
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/login" exact element={<Login />} />
         <Route path="/logout" exact element={<Logout />} />
         <Route path="/allnfts" exact element={<AllNFTs />} />
+        <Route path="/nft-details/:id" exact element={<NFTDetails />} />
         <Route path="/createnft" exact element={<CreateNFT />} />
         <Route path="*" exact element={<ErrorPage />} />
       </Routes>

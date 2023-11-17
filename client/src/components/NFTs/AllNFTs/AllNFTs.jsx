@@ -29,8 +29,6 @@ const AllNFTs = () => {
 
 	 },[])
 
-     console.log(`getAllNFTs provided me with this ${JSON.stringify(allNFTs)}`);
-
     //TODO FILTERS
 
 	return (
@@ -83,7 +81,7 @@ const AllNFTs = () => {
 				{allNFTs.length > 0 ? (
                 <div className="row class-container">
 
-				{ allNFTs.map(c => <SingleNFTCard key = {c._id} nftData={c} />) }
+				{ allNFTs.map(n => <SingleNFTCard key = {n._id} nftData={n} cardId={n._id}/>) }
 
 			 </div> )
 			 : 

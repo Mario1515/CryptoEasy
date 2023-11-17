@@ -36,7 +36,6 @@ const Register = ({ auth }) => {
     }
 
     try {
-      console.log(`I will try to register ${userData.email}`);
 
       //const response = await register(userData);
 
@@ -45,8 +44,6 @@ const Register = ({ auth }) => {
           auth.userLogin(authData)
           navigate("/");
         });
-
-      console.log(`User successfully creaded with email ${JSON.stringify(response.email)}`)
 
     } catch (err) {
       console.log(`I received this error on registration: ${err.message}`)
