@@ -1,0 +1,24 @@
+.filter-classes-navlink:hover {
+	background: #343148;
+    color: #F7CAC9;
+}
+
+.filter-classes-navlink:active {
+	background: #343148;
+    color: #F7CAC9;
+}
+
+.classes-header-text {
+	text-align:center!important;
+	margin-bottom:30px!important;
+}
+
+.nft-img {
+	margin-right: 50px; /* Adjust the margin to move the image to the left */
+	margin-top: 10px; /* Adjust the margin to move the image to the left */
+	margin-bottom: 100px; /* Adjust the margin to move the image to the left */
+  }
+  
+  .nft-img img {
+	max-width: 120%; /* Adjust the max-width to make the image a bit smaller */
+  }

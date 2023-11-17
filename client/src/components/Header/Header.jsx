@@ -28,6 +28,9 @@ const Header = () => {
               <NavLink to="/crypto" className="nav-item nav-link">
                 Crypto
               </NavLink>
+              <NavLink to="/allnfts" className="nav-item nav-link">
+                    NFT
+              </NavLink>
 
               {!isAuthenticated ? (
                 <>
@@ -40,6 +43,9 @@ const Header = () => {
                 </>
               ) : (
                 <>
+                  <NavLink to="/createnft" className="nav-item nav-link">
+                    Create NFT
+                  </NavLink>
                   <NavLink to="/logout" className="nav-item nav-link">
                     Logout
                   </NavLink>

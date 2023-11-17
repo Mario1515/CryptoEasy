@@ -10,7 +10,7 @@ const Hero = () => {
           <div className="row align-items-center">
             <div className="col-sm-12 col-md-6">
               <div className="hero-text">
-                <h1>Unleash the Future with our Product</h1>
+                <h1>Unleash the Future of Crypto with our Product</h1>
                 <p>
                 Join Crypto Easy today and be part of a community that's shaping the future of finance!
                 </p>
