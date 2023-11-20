@@ -12,6 +12,8 @@ const nftReducer = (state, action) => {
             return action.payload.map(x => ({ ...x, comments: [] }));
         case 'EDIT_NFT':
             return state.map(x => x._id === action.nftId ? action.payload : x);
+        case 'REMOVE_NFT':
+            return state.filter(x => x._id !== action.nftId);
         default:
             return state;
     }
@@ -49,10 +51,18 @@ export const NftProvider = ({
         });
     };
 
+    const nftRemove = (nftId) => {
+        dispatch({
+            type: 'REMOVE_NFT',
+            nftId
+        })
+    }
+
     return (
         <NftContext.Provider value={{
             selectNft,
-            nftEdit
+            nftEdit,
+            nftRemove
         }}>
             {children}
         </NftContext.Provider>

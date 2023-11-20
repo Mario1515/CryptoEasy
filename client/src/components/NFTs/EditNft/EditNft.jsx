@@ -22,13 +22,14 @@ const EditNft = () => {
 
     const nftData = Object.fromEntries(new FormData(e.target));
 
+    console.log(nftData);
+
     try {
         const result = await nftService.edit(nftId, nftData);
         nftEdit(nftId, result);
         navigate(`/nft-details/${nftId}`);
       } catch (err) {
         console.error(err);
-        
       }
 
   };

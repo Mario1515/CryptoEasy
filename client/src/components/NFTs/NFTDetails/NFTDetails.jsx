@@ -1,17 +1,21 @@
 import React from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams, useNavigate } from "react-router-dom";
 import SinglePageHead from "../../SinglePageHead/SingePageHead";
 import * as nftService from "../../../services/nftService";
 import * as userService from "../../../services/userService";
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../../../context/AuthContext";
+import { NftContext } from "../../../context/NftContext";
+
 
 //todo
 import "./NFTDetails.css";
 
-const NFTDetails = ({ nftData }) => {
+const NFTDetails = ( ) => {
 
+  const { selectNft, nftRemove } = useContext(NftContext);
   const { user, isAuthenticated } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   // HANDLING NFT DATA INFO WITH
   const nftId = Object.values(useParams()).toString();
@@ -30,6 +34,21 @@ const NFTDetails = ({ nftData }) => {
     getNFT();
   }, []);
 
+  const nftDeleteHandler = async () => {
+    const confirmation = window.confirm(
+      "Are you sure you want to delete this NFT? The process is permanent."
+    );
+
+    if (confirmation) {
+      try {
+        await nftService.remove(nftId);
+        nftRemove(nftId);
+        navigate("/allnfts");
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  };
   //NFT onwer check
   const isOwner = nftDetails._ownerId === user._id;
 
@@ -66,7 +85,7 @@ const NFTDetails = ({ nftData }) => {
                       <li>
                         <strong>Created By: </strong> {nftDetails.creatorName}
                       </li>
-                        <li>
+                      <li>
                         <strong>Blockchain: </strong> {nftDetails.type}
                       </li>
                       <li>
@@ -76,37 +95,32 @@ const NFTDetails = ({ nftData }) => {
                   </div>
                 </div>
                 {/* Buttons for Creator */}
-                {isAuthenticated && isOwner ? ( 
-                <div className="author-btns">
-                        <button className="submit login details">
-                          {" "}
-                          <NavLink
-                            className="btn"
-                            to={{
-                              pathname: `/edit/${nftId}/edit`
-                            }}
-                          >
-                            EDIT
-                          </NavLink>
-                        </button>
-                        <button className="submit login details">
-                          {" "}
-                          <NavLink
-                            className="btn"
-                            to={{
-                              pathname: `/delete/`
-                            }}
-                          >
-                            DELETE
-                          </NavLink>{" "}
-                        </button>
-                      </div>
-                      ) : null}
+                {isAuthenticated && isOwner ? (
+                  <div className="author-btns">
+                    <button className="submit login details">
+                      {" "}
+                      <NavLink
+                        className="btn"
+                        to={{
+                          pathname: `/edit/${nftId}/edit`,
+                        }}
+                      >
+                        EDIT
+                      </NavLink>
+                    </button>
+                    <button className="submit login details">
+                      {" "}
+                      <NavLink className="btn" onClick={nftDeleteHandler}>
+                        DELETE
+                      </NavLink>{" "}
+                    </button>
                   </div>
+                ) : null}
               </div>
             </div>
           </div>
         </div>
+      </div>
     </>
   );
 };
