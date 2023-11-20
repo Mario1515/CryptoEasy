@@ -3,7 +3,7 @@ import SinglePageHead from "../../SinglePageHead/SingePageHead";
 import { Link, NavLink } from 'react-router-dom';
 import { useState, useEffect} from "react";
 import * as nftService from "../../../services/nftService";
-import SingleNFTCard from "../SingleNFTCard/SingleNFTCard";
+import SingleNFTCard from "../SingleNftCard/SingleNFTCard";
 
 
 import './AllNFTs.css'

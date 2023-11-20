@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import Crypto from "./components/Crypto/Crypto/Crypto";
@@ -10,17 +9,20 @@ import Login from "./components/User/Login/Login";
 import Footer from "./components/Footer/Footer";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Logout from "./components/User/Logout/Logout";
-import AllNFTs from "./components/NFTs/AllNFTs/AllNFTs";
-import CreateNFT from "./components/NFTs/CreateNFT/CreateNFT";
-import NFTDetails from "./components/NFTs/NFTDetails/NFTDetails"
+import AllNFTs from "./components/NFTs/AllNfts/AllNFTs";
+import CreateNft from "./components/NFTs/CreateNft/CreateNft.jsx";
+import NFTDetails from "./components/NFTs/NftDetails/NFTDetails"
 import PrivateRoute from "./components/common/PrivateRoute";
+import { NftProvider } from "./context/NftContext";
+import NftOwner from "./components/common/NftOwner";
+import EditNft from "./components/NFTs/EditNft/EditNft";
 
-//import { AuthContext } from "../src/context/AuthContext";
 
 const App = () => {
   return (
     <>
       <AuthProvider>
+      <NftProvider>
         <CryptoProvider>
           <Header />
           <Routes>
@@ -33,13 +35,17 @@ const App = () => {
             <Route path="/nft-details/:id" exact element={<NFTDetails />} />
             <Route path="/createnft" element={(
               <PrivateRoute>
-                <CreateNFT />
+                <CreateNft />
               </PrivateRoute>
             )} />
+            <Route element= {<NftOwner />}>
+              <Route path="/edit/:nftId/edit" element={<EditNft />} />
+            </Route>
             <Route path="*" exact element={<ErrorPage />} />
           </Routes>
           <Footer />
         </CryptoProvider>
+        </NftProvider>
       </AuthProvider>
     </>
   );

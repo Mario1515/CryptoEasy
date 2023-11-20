@@ -10,23 +10,11 @@ import { AuthContext } from "../../../context/AuthContext";
 import "./NFTDetails.css";
 
 const NFTDetails = ({ nftData }) => {
-  // CHECKING IF THIS IS THE OWNER CHECK.
 
   const { user, isAuthenticated } = useContext(AuthContext);
 
-
-  // console.log(`${JSON.stringify(user._id)}`)
-
-  // console.log(`Data to NFT Details: ${JSON.stringify(nftData)}`)
-
-  let isAuthor = false; 
-
-  console.log(isAuthenticated);
-
   // HANDLING NFT DATA INFO WITH
-
   const nftId = Object.values(useParams()).toString();
-
   const [nftDetails, setNftDetails] = useState({});
 
   useEffect(() => {
@@ -41,6 +29,9 @@ const NFTDetails = ({ nftData }) => {
     }
     getNFT();
   }, []);
+
+  //NFT onwer check
+  const isOwner = nftDetails._ownerId === user._id;
 
   return (
     <>
@@ -85,14 +76,14 @@ const NFTDetails = ({ nftData }) => {
                   </div>
                 </div>
                 {/* Buttons for Creator */}
-                {isAuthenticated ? ( 
+                {isAuthenticated && isOwner ? ( 
                 <div className="author-btns">
                         <button className="submit login details">
                           {" "}
                           <NavLink
                             className="btn"
                             to={{
-                              pathname: `/edit/`
+                              pathname: `/edit/${nftId}/edit`
                             }}
                           >
                             EDIT

@@ -43,8 +43,6 @@ const CreateNFT = () => {
         e.preventDefault();
         
 
-        
-
         const formData = new FormData(e.target);
 
         
@@ -63,7 +61,7 @@ const CreateNFT = () => {
 
         } catch (err) {
 
-            console.log(`There is an error while creating the NFT -> // ${err.message}`);	
+            console.log(`There is an error while creating the NFT -> // ${err}`);	
 
         }
 

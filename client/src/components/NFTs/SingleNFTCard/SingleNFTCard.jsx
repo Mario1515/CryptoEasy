@@ -1,5 +1,5 @@
 import * as userService from '../../../services/userService'
-
+import { getOne } from '../../../services/nftService';
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
