@@ -1,27 +1,123 @@
-import React from 'react';
-import { NavLink } from "react-router-dom";
+import React from "react";
+import { NavLink, useParams } from "react-router-dom";
 import SinglePageHead from "../../SinglePageHead/SingePageHead";
-import * as nftService from '../../../services/nftService';
-import * as userService from '../../../services/userService';
+import * as nftService from "../../../services/nftService";
+import * as userService from "../../../services/userService";
 import { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../../../context/AuthContext";
 
 //todo
-import './NFTDetails.css';
+import "./NFTDetails.css";
+
+const NFTDetails = ({ nftData }) => {
+  // CHECKING IF THIS IS THE OWNER CHECK.
+
+  const { user, isAuthenticated } = useContext(AuthContext);
 
 
-const NFTDetails = ({ nftData  }) => {
+  // console.log(`${JSON.stringify(user._id)}`)
 
-  console.log("Hello from NFT Details!");
+  // console.log(`Data to NFT Details: ${JSON.stringify(nftData)}`)
 
-    return () => {
-        <>
+  let isAuthor = false; 
+
+  console.log(isAuthenticated);
+
+  // HANDLING NFT DATA INFO WITH
+
+  const nftId = Object.values(useParams()).toString();
+
+  const [nftDetails, setNftDetails] = useState({});
+
+  useEffect(() => {
+    async function getNFT() {
+      try {
+        const result = await nftService.getOne(nftId);
+
+        setNftDetails(result);
+      } catch (err) {
+        console.log(`There was an error with getting the single NFT ${err}`);
+      }
+    }
+    getNFT();
+  }, []);
+
+  return (
+    <>
       <SinglePageHead
-        pageInfo={{ name: nftData.name, slug: `/crypto` }}
+        pageInfo={{
+          name: `${nftDetails.name}`,
+          slug: `nft-details/${nftDetails._id}`,
+        }}
       />
 
-     </>
-    }
-}
+      <div className="single">
+        <div className="container">
+          <div className="row details-row">
+            <div className="col-lg-8">
+              <div className="single-content wow fadeInUp">
+                <img src={nftDetails.imageUrl} />
+                <h2>{nftDetails.name}</h2>
+                <p>{nftDetails.description}</p>
+              </div>
+            </div>
 
+            <div className="col-lg-4">
+              <div className="sidebar">
+                <div className="sidebar-widget wow fadeInUp"></div>
+
+                <div className="sidebar-widget wow fadeInUp">
+                  <h2 className="widget-title">NFT Details:</h2>
+                </div>
+                <div className="sidebar-widget wow fadeInUp">
+                  <div className="category-widget">
+                    <ul>
+                      <li>
+                        <strong>Created By: </strong> {nftDetails.creatorName}
+                      </li>
+                        <li>
+                        <strong>Blockchain: </strong> {nftDetails.type}
+                      </li>
+                      <li>
+                        <strong>Price: </strong> {nftDetails.price}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                {/* Buttons for Creator */}
+                {isAuthenticated ? ( 
+                <div className="author-btns">
+                        <button className="submit login details">
+                          {" "}
+                          <NavLink
+                            className="btn"
+                            to={{
+                              pathname: `/edit/`
+                            }}
+                          >
+                            EDIT
+                          </NavLink>
+                        </button>
+                        <button className="submit login details">
+                          {" "}
+                          <NavLink
+                            className="btn"
+                            to={{
+                              pathname: `/delete/`
+                            }}
+                          >
+                            DELETE
+                          </NavLink>{" "}
+                        </button>
+                      </div>
+                      ) : null}
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </>
+  );
+};
 
 export default NFTDetails;

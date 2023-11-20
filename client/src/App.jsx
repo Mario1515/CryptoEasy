@@ -13,28 +13,33 @@ import Logout from "./components/User/Logout/Logout";
 import AllNFTs from "./components/NFTs/AllNFTs/AllNFTs";
 import CreateNFT from "./components/NFTs/CreateNFT/CreateNFT";
 import NFTDetails from "./components/NFTs/NFTDetails/NFTDetails"
+import PrivateRoute from "./components/common/PrivateRoute";
 
 //import { AuthContext } from "../src/context/AuthContext";
 
 const App = () => {
   return (
     <>
-    <AuthProvider>
-    <CryptoProvider> 
-      <Header />
-      <Routes>
-        <Route path="/" exact element={<Hero />} />
-        <Route path="/crypto" exact element={<Crypto />} />
-        <Route path="/register" exact element={<Register />} />
-        <Route path="/login" exact element={<Login />} />
-        <Route path="/logout" exact element={<Logout />} />
-        <Route path="/allnfts" exact element={<AllNFTs />} />
-        <Route path="/nft-details/:id" exact element={<NFTDetails />} />
-        <Route path="/createnft" exact element={<CreateNFT />} />
-        <Route path="*" exact element={<ErrorPage />} />
-      </Routes>
-      <Footer />
-      </CryptoProvider>
+      <AuthProvider>
+        <CryptoProvider>
+          <Header />
+          <Routes>
+            <Route path="/" exact element={<Hero />} />
+            <Route path="/crypto" exact element={<Crypto />} />
+            <Route path="/register" exact element={<Register />} />
+            <Route path="/login" exact element={<Login />} />
+            <Route path="/logout" exact element={<Logout />} />
+            <Route path="/allnfts" exact element={<AllNFTs />} />
+            <Route path="/nft-details/:id" exact element={<NFTDetails />} />
+            <Route path="/createnft" element={(
+              <PrivateRoute>
+                <CreateNFT />
+              </PrivateRoute>
+            )} />
+            <Route path="*" exact element={<ErrorPage />} />
+          </Routes>
+          <Footer />
+        </CryptoProvider>
       </AuthProvider>
     </>
   );

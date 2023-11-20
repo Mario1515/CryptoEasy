@@ -1,8 +1,9 @@
 import SinglePageHead from "../../SinglePageHead/SingePageHead"
 import { useContext, useState } from "react";
-import { withAuth } from "../../../context/AuthContext";
+import { withAuth, AuthContext } from "../../../context/AuthContext";
 import * as nftService from  "../../../services/nftService"
 import { useNavigate } from "react-router-dom";
+
 //import { isAuth } from "../../../hoc/isAuth";
 //import {  validateUrl } from "../../../services/userService";
 //import Notification from "../../User/Notification/Notification";
@@ -15,8 +16,15 @@ const initialNotificationState = {type:'', message: []}
 
 
 const CreateNFT = () => {
-	//const history = useHistory();
+  
   const navigate = useNavigate();
+  const { isAuthenticated } = useContext(AuthContext);
+  //router guarding 
+  if(!isAuthenticated){
+    navigate("/login");
+  }
+	//const history = useHistory();
+ 
 	// Notifation handling
 	// const [notification, setNotification] = useState(initialNotificationState)
 	// const [showNotification, setShowNotification] = useState(false);
@@ -26,16 +34,25 @@ const CreateNFT = () => {
 
 	// }
 
+  //getting creator username
+  const { user } = useContext(AuthContext);
+  const [creatorName, setCreatorName] = useState(user.username);
+
     async function createNFT(e){
 
         e.preventDefault();
+        
+
+        
 
         const formData = new FormData(e.target);
+
+        
 		const {name, type, imageUrl, price, description } = Object.fromEntries(formData);
 
         //Validatations TODO
 
-        const nftData = {name, type, imageUrl, price, description };
+        const nftData = {name, type, imageUrl, price, description, creatorName};
 
         try {
 

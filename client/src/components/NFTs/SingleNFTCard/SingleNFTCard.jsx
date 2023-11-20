@@ -1,4 +1,5 @@
 import * as userService from '../../../services/userService'
+
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -26,6 +27,7 @@ const SingleNFTCard = ({ nftData }) => {
 	// 	getClassAuthor();
 
 	// }, [])
+
 
 	return (
 		<div className="col-lg-4 col-md-6 col-sm-12 class-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
