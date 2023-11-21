@@ -43,14 +43,17 @@ const Login = () => {
 			  setNotification({ type:'error', message: errors});
         return;
       } else {
-        userLogin(authData);
-        setShowNotification(true)
+
+        setShowNotification(true);
         setNotification({
-          type:'success',
+          type: 'success',
           message: success
-        })
-  
-        setTimeout(() => {navigate("/")}, 2000)
+        });
+      
+        setTimeout(() => {
+          userLogin(authData);
+          navigate("/");
+        }, 2000);
       }
 
     } catch (error) {

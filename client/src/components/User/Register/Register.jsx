@@ -80,14 +80,17 @@ const Register = ({ auth }) => {
 
     try {
       const authData = await userService.register(userData);
-      auth.userLogin(authData);
+      
     
       setShowNotification(true)
 				setNotification({
 					type:'success',
 					message: success
 				});
-        setTimeout(() => {navigate("/")}, 2000);       
+        setTimeout(() => {
+          auth.userLogin(authData);
+          navigate("/");
+        }, 2000);       
     } catch (err) {
         errors.push(err.message)
         setShowNotification(true)
