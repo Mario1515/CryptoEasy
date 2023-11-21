@@ -1,11 +1,9 @@
-import SinglePageHead from "../../SinglePageHead/SingePageHead";
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthContext";
 import * as userService from "../../../services/userService";
-import { NavLink } from "react-router-dom";
 import Notification from "../Notication/Notification";
-
+import SinglePageHead from "../../SinglePageHead/SingePageHead";
 import "./Login.css";
 
 const Login = () => {
@@ -69,7 +67,6 @@ const Login = () => {
   return (
     <>
       <SinglePageHead pageInfo={{ name: "Login", slug: "login" }} />
-
       <div className="main">
         <p className="sign" align="center">
           Sign in
