@@ -20,9 +20,13 @@ const AllNFTs = () => {
     useEffect( ()=>{
 
 	 async function getAllNFTs() {
-			const result = await nftService.getAll();
-			initialState = [...result]
-            setAllNFTs(result);
+        try {
+            const result = await nftService.getAll();
+            setAllNFTs(result && Array.isArray(result) ? result : []);
+        } catch (error) {
+
+            console.error('Error fetching NFTs:', error);
+        }
  	}
     
      getAllNFTs()

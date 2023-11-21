@@ -131,3 +131,14 @@ button {
 		border-radius: 0px;
 	}
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #2fe3e7;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: rgba(255, 255, 255, 0);
+}
+	

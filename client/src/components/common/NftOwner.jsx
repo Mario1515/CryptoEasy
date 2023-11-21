@@ -6,6 +6,10 @@ import { NftContext } from "../../context/NftContext";
 
 
 const NftOwner = ({ children }) => {
+
+    
+    // receives undefined TODO
+
     const { selectNft } = useContext(NftContext);
 
     const { user, isAuthenticated } = useAuthContext();
@@ -13,8 +17,9 @@ const NftOwner = ({ children }) => {
 
     const currentNft = selectNft(nftId);
 
+    if (user._id !== currentNft._ownerId) {
 
-    if (isAuthenticated && user._id !== currentNft._ownerId) {
+
         return <Navigate to='/allnfts' replace />
     }
 

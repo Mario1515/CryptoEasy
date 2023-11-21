@@ -9,7 +9,12 @@ export const NftContext = createContext();
 const nftReducer = (state, action) => {
     switch (action.type) {
         case 'ADD_NFTS':
-            return action.payload.map(x => ({ ...x, comments: [] }));
+            if (Array.isArray(action.payload)) {
+                return action.payload.map(x => ({ ...x, comments: [] }));
+            } else {
+                // If action.payload is not an array or is undefined, it will return the current state
+                return state;
+            }
         case 'EDIT_NFT':
             return state.map(x => x._id === action.nftId ? action.payload : x);
         case 'REMOVE_NFT':
@@ -40,10 +45,22 @@ export const NftProvider = ({
     }, []);
 
     const selectNft = (nftId) => {
+
+        console.log("Searching for nft" )
+        console.log(`this are the nfts` + nfts);
         return nfts.find(x => x._id === nftId) || {};
     };
 
+    const fetchNftDetails = (nftId, nftDetails) => {
+        dispatch({
+            type: 'FETCH_GAME_DETAILS',
+            payload: nftDetails,
+            nftId,
+        })
+    }
+
     const nftEdit = (nftId, nftData) => {
+        
         dispatch({
             type: 'EDIT_NFT',
             payload: nftData,
@@ -60,6 +77,7 @@ export const NftProvider = ({
 
     return (
         <NftContext.Provider value={{
+            fetchNftDetails,
             selectNft,
             nftEdit,
             nftRemove

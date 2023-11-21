@@ -68,7 +68,7 @@ form .input-box span.details{
 	font-size: 16px;
 	border-radius: 20px;
 	padding-left: 15px;
-	border: 1px solid #ccc;
+	border: 1px solid #0f0000;
 	border-bottom-width: 2px;
 	transition: all 0.3s ease;
 }
@@ -167,4 +167,14 @@ form .user-details .input-box{
 
 .input-box span.details.avatar-label {
   margin-left: 110px; /* Adjust the margin-left as needed */
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #2fe3e7;
+  box-shadow: 0 0 0 1000px #41506b inset !important; /* Background color for autofilled input */
+  transition: background-color 5000s ease-in-out 0s;
 }

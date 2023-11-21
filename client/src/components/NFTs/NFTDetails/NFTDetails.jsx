@@ -13,7 +13,7 @@ import "./NFTDetails.css";
 
 const NFTDetails = ( ) => {
 
-  const { selectNft, nftRemove } = useContext(NftContext);
+  const { selectNft, nftRemove, fetchNftDetails } = useContext(NftContext);
   const { user, isAuthenticated } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -27,6 +27,8 @@ const NFTDetails = ( ) => {
         const result = await nftService.getOne(nftId);
 
         setNftDetails(result);
+
+        fetchNftDetails(nftId, {...result});
       } catch (err) {
         console.log(`There was an error with getting the single NFT ${err}`);
       }
@@ -49,6 +51,7 @@ const NFTDetails = ( ) => {
       }
     }
   };
+  
   //NFT onwer check
   const isOwner = nftDetails._ownerId === user._id;
 
@@ -102,7 +105,7 @@ const NFTDetails = ( ) => {
                       <NavLink
                         className="btn"
                         to={{
-                          pathname: `/edit/${nftId}/edit`,
+                          pathname: `/edit/${nftDetails._id}/edit`,
                         }}
                       >
                         EDIT

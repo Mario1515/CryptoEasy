@@ -22,29 +22,27 @@ const App = () => {
   return (
     <>
       <AuthProvider>
-      <NftProvider>
-        <CryptoProvider>
-          <Header />
-          <Routes>
-            <Route path="/" exact element={<Hero />} />
-            <Route path="/crypto" exact element={<Crypto />} />
-            <Route path="/register" exact element={<Register />} />
-            <Route path="/login" exact element={<Login />} />
-            <Route path="/logout" exact element={<Logout />} />
-            <Route path="/allnfts" exact element={<AllNFTs />} />
-            <Route path="/nft-details/:id" exact element={<NFTDetails />} />
-            <Route path="/createnft" element={(
-              <PrivateRoute>
-                <CreateNft />
-              </PrivateRoute>
-            )} />
-            <Route element= {<NftOwner />}>
-              <Route path="/edit/:nftId/edit" element={<EditNft />} />
-            </Route>
-            <Route path="*" exact element={<ErrorPage />} />
-          </Routes>
-          <Footer />
-        </CryptoProvider>
+        <NftProvider>
+          <CryptoProvider>
+            <Header />
+            <Routes>
+              <Route path="/" exact element={<Hero />} />
+              <Route path="/crypto" exact element={<Crypto />} />
+              <Route path="/register" exact element={<Register />} />
+              <Route path="/login" exact element={<Login />} />
+              <Route path="/logout" exact element={<Logout />} />
+              <Route path="/allnfts" exact element={<AllNFTs />} />
+              <Route path="/nft-details/:id" exact element={<NFTDetails />} />
+              <Route path="/createnft" element={(
+                <PrivateRoute>
+                  <CreateNft />
+                </PrivateRoute>
+              )} />
+              <Route path="/edit/:nftId/edit" exact element={<EditNft />} />
+              <Route path="*" exact element={<ErrorPage />} />
+            </Routes>
+            <Footer />
+          </CryptoProvider>
         </NftProvider>
       </AuthProvider>
     </>
