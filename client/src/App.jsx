@@ -16,6 +16,8 @@ import PrivateRoute from "./components/common/PrivateRoute";
 import { NftProvider } from "./context/NftContext";
 import NftOwner from "./components/common/NftOwner";
 import EditNft from "./components/NFTs/EditNft/EditNft";
+import Contact from "./components/Contact/Contact.jsx";
+import Profile from "./components/User/Profile/Profile.jsx";
 
 
 const App = () => {
@@ -39,6 +41,8 @@ const App = () => {
                 </PrivateRoute>
               )} />
               <Route path="/edit/:nftId/edit" exact element={<EditNft />} />
+              <Route path="/profile" exact element={<Profile />} />
+              <Route path="/contact" exact element={<Contact />} />
               <Route path="*" exact element={<ErrorPage />} />
             </Routes>
             <Footer />

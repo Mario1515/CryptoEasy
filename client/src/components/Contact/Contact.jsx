@@ -1,17 +1,31 @@
-import SinglePageHead from "../../components/SinglePageHead/SingePageHead";
-import { send } from 'emailjs-com';
-import  * as userService from "../../services/userService";
 import { useState } from "react";
-import { useHistory } from "react-router";
+import { useNavigate, NavLink } from "react-router-dom";
+
+import { send } from 'emailjs-com';
+
+import SinglePageHead from "../../components/SinglePageHead/SingePageHead";
+import Notification from "../User/Notication/Notification";
+import { validateEmail } from "../../services/userService";
 import "./Contact.css"
 
-//TODO:
-// import Notification from "../User/Notification/Notification";
-// import { validateEmail } from "../../services/userService";
+
 
 const Contact = () => {
 
-    
+	//Notification Handler
+	const initialNotificationState = {type:'', message: []}
+
+	const [notification, setNotification] = useState(initialNotificationState)
+	const [showNotification, setShowNotification] = useState(false);
+
+	const closeNotification = () => {
+		setShowNotification(false)
+		setNotification(initialNotificationState)
+	}
+
+	// Contact Handler
+	const navigate = useNavigate();
+
 	const [toSend, setToSend] = useState({
 		"from_name": '',
 		"to_name": 'Admin',
@@ -57,40 +71,52 @@ const Contact = () => {
 	  }
 
 
-	function submitContact(e) {
+	  async function submitContact(e) {
 		e.preventDefault();
-	
-		send(
-			'service_odjm2ae',
-			'template_82tmqgn',
-			toSend,
-			'user_ASUFZV4633Wfp9UfdzYfX'
-		  )
-			.then((response) => {
-	
-			  setShowNotification(true)
-			  setNotification({
-				  type:'success',
-				  message: ['Message sent successfully. We will get back to you!']
-			  })
-			
-			  e.target.reset();
-		
+
+		try {
+			// First notification (User Waiting)
+			setNotification({
+				type:'success',
+				message: ['Message is being sent! Please wait...']
 			})
-			.catch((err) => {
-		
-			  setShowNotification(true)
-			  setNotification({
-				  type:'error',
-				  message: ['Error sending message! Try again or contact us via phone']
-			  })
-
-			});
 	
-		//	setTimeout(() => {setShowNotification(false)},3000)
+			setShowNotification(true)
 
-			setTimeout(() => {history.push("/")}, 4000)
-			setNotification(initialNotificationState)
+			//sending email
+			await send(
+				'service_43qhz1b',
+				'template_1gktezq',
+				toSend,
+				'5PyJyuR92ycLJFldj'
+			);
+
+			// Reset notification
+			setNotification({
+				type: 'success',
+				message: ['Message sent successfully. We will get back to you!']
+			});
+
+			// Redirect after 3 seconds
+			setTimeout(() => {
+				setShowNotification(false); // Hide the previous notification
+				setNotification(initialNotificationState);
+				navigate("/");
+			}, 3000);
+
+			e.target.reset();
+	
+		} catch (err) {
+			setShowNotification(true);
+			setNotification({
+				type:'error',
+				message: ['Error sending message! Try again or contact us via phone.']
+			})
+
+			return;
+		}
+		
+		setShowNotification(true);
 	}
 
 
@@ -117,14 +143,14 @@ const Contact = () => {
                                 <i className="fa fa-phone-alt"></i>
                                 <div className="contact-text">
                                     <h2>Phone</h2>
-                                    <p>+012 345 67890</p>
+                                    <p>+01 15030915</p>
                                 </div>
                             </div>
                             <div className="col-md-4 contact-item wow zoomIn" data-wow-delay="0.6s">
                                 <i className="far fa-envelope"></i>
                                 <div className="contact-text">
                                     <h2>Email</h2>
-                                    <p>tatyanaolegasenova97@gmail.com</p>
+                                    <p>mariopetkovnfsg@gmail.com</p>
                                 </div>
                             </div>
                         </div>

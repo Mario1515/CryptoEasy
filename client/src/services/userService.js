@@ -20,6 +20,21 @@ export const logout = async (accessToken) => {
     }
 };
 
+
+export const getUser = async (accessToken) => {
+    try {
+        const response = await fetch(`${baseUrl}/me`, {
+            headers: {
+                'X-Authorization': accessToken
+            }
+        });
+
+        return response;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 export function validateEmail(email) {
     return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
   }
