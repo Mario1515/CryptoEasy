@@ -1,11 +1,27 @@
+import { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import SinglePageHead from "../../SinglePageHead/SingePageHead";
 import * as nftService from "../../../services/nftService";
-import { useContext, useEffect, useState } from "react";
-import * as AuthService from "../../../context/AuthContext";
 import { NftContext } from "../../../context/NftContext";
-import { useNavigate, useParams } from "react-router-dom";
+import { validateUrl } from "../../../services/userService";
+import Notification from "../../User/Notication/Notification";
 
 const EditNft = () => {
+
+  //Notification Handler
+
+  let errors = []
+  let success = [`You have successfully edited an NFT! Redirecting...`]
+  const initialNotificationState = {type:'', message: []}
+
+  const [notification, setNotification] = useState(initialNotificationState)
+	const [showNotification, setShowNotification] = useState(false);
+	const closeNotification = () => {
+	setShowNotification(false)
+	setNotification(initialNotificationState)
+  }
+
+  //Edit Logic 
   const [currentNft, setCurrentNft] = useState({});
   const { nftEdit } = useContext(NftContext);
   const { nftId } = useParams();
@@ -22,16 +38,60 @@ const EditNft = () => {
 
     const nftData = Object.fromEntries(new FormData(e.target));
 
+    const {name, imageUrl, price, type, description } = nftData;
+
     console.log(nftData);
+
+    //Validations
+    if (name.toString().length < 3 || name.toString().length > 30) {
+			errors.push('Name must be between 3 and 30 characters.')
+		}
+    if (description.toString().length < 10 || description.toString().length > 100) {
+			errors.push('Description must be between 10 and 100 characters.')
+		}
+    if (Number(price.toString()) <= 0 || isNaN(Number(price))) {
+      errors.push('Price must be a positive number.');
+    }
+
+    let imageUrlValid = validateUrl(imageUrl);
+		if (!imageUrlValid) {
+			errors.push('Image URL must be a valid URL.');
+		}
+
+    if(!type){
+      errors.push('You must choose a blockchain.');
+    }
+
+    if (errors.length > 0 ) {
+			setShowNotification(true)
+			setNotification({
+				type:'error',
+				message: errors
+			});
+      return;
+		}
 
     try {
         const result = await nftService.edit(nftId, nftData);
-        nftEdit(nftId, result);
-        navigate(`/nft-details/${nftId}`);
-      } catch (err) {
-        console.error(err);
-      }
 
+        setShowNotification(true)
+          setNotification({
+            type:'success',
+            message: success
+          });
+          setTimeout(() => {
+            nftEdit(nftId, result);
+            navigate(`/nft-details/${nftId}`)
+          }, 2000);    
+
+      } catch (err) {
+           errors.push(err.message)
+          setShowNotification(true)
+          setNotification({
+          type:'error',
+          message: errors
+      });
+    };
   };
 
   return (
@@ -40,7 +100,7 @@ const EditNft = () => {
 
       <div className="container-register">
         <div className="title sign">Edit NFT</div>
-        {/* {showNotification==true ? <Notification type={notification.type} message={notification.message} closeNotification={closeNotification} /> : '' } */}
+        {showNotification==true ? <Notification type={notification.type} message={notification.message} closeNotification={closeNotification} /> : '' }
         <div className="content">
           <form action="#" method="POST" onSubmit={onSubmit}>
             <div className="user-details">
@@ -55,14 +115,13 @@ const EditNft = () => {
               </div>
               <div className="input-box">
                 <span className="details">Blockchain</span>
-                <select name="type" defaultValue={"asdf"}>
+                <select name="type" defaultValue={currentNft.type}>
                   <option value="Ethereum">Ethereum</option>
                   <option value="Solana">Solana</option>
                   <option value="Polygon">Polygon</option>
                   <option value="Bnb">BNB Smart Chain</option>
                 </select>
               </div>
-
               <div className="input-box">
                 <span className="details">NFT Image</span>
                 <input

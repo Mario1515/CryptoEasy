@@ -1,8 +1,8 @@
 .textarea-box {
-    width: 100%; /* Set the desired width (you can use pixels, percentage, or other units) */
+    width: 100%; 
   }
   
-  /* Or, directly target the textarea element */
+ 
   textarea {
-    width: 213%; /* Set the desired width */
+    width: 213%; 
   }
