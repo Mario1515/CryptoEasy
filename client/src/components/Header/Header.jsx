@@ -46,6 +46,9 @@ const Header = () => {
                   <NavLink to="/createnft" className="nav-item nav-link">
                     Create NFT
                   </NavLink>
+                  <NavLink to="/profile" className="nav-item nav-link">
+                    Profile
+                  </NavLink>
                   <NavLink to="/logout" className="nav-item nav-link">
                     Logout
                   </NavLink>

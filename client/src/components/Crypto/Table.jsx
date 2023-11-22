@@ -2,7 +2,7 @@
 import React, { useContext } from "react";
 import { CryptoContext } from "../../context/CryptoContext";
 import { NavLink, redirect } from "react-router-dom";
-import "./table.css"; // Custom styling
+import "./Table.css"; // Custom styling
 import ErrorTable from "./ErrorTable";
 
 const Table = () => {

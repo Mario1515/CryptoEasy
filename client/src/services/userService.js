@@ -25,13 +25,14 @@ export const getUser = async (accessToken) => {
     try {
         const response = await fetch(`${baseUrl}/me`, {
             headers: {
-                'X-Authorization': accessToken
+                'X-Authorization': accessToken,
+                "Content-Type": 'application/json'
             }
         });
 
         return response;
     } catch (error) {
-        console.log(error);
+        console.log(`I get this error on service level ${error}`);
     }
 };
 
