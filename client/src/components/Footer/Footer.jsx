@@ -11,7 +11,7 @@ const Footer = () => {
                         <span className="footer-logo">Crypto Easy</span>
                         <h3>Sofia, Bulgaria</h3>
                         <div className="footer-menu">
-                            <p>+01 15030915</p>
+                            <p>+359 1234567</p>
                             <p>mariopetkovnfsg@gmail.com</p>
                         </div>
                 </div>

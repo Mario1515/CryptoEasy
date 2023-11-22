@@ -107,7 +107,8 @@ const Register = ({ auth }) => {
       last_name,
       password,
       re_password,
-      imageUrl
+      imageUrl,
+      country
     }
 
     try {

@@ -39,9 +39,9 @@ const Profile = () => {
                 <div className="col-sm-4 bg-c-lite-green user-profile">
                   <div className="card-block text-center text-white">
                     <div className="m-b-2">
-                      <img src={userData.user_imageUrl} className="img-radius" alt="User-Profile-Image" />
+                      <img src={userData.imageUrl} className="img-radius" alt="User-Profile-Image" />
                     </div>
-                    <h6 className="f-w-600">{userData.first_name} {userData.last_name} </h6>
+                    <h6 className="f-w-600"></h6>
                     <p>{userData.username}</p>
                     <i className="mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
                   </div>
@@ -55,15 +55,15 @@ const Profile = () => {
                         <h6 className="text-muted f-w-400">{userData.email}</h6>
                       </div>
                       <div className="col-sm-6">
-                        <p className="m-b-10 f-w-600">Phone</p>
-                        <h6 className="text-muted f-w-400">98979989898</h6>
+                        <p className="m-b-10 f-w-600">Jurisdiction Code</p>
+                        <h6 className="text-muted f-w-400">{userData.country}</h6>
                       </div>
                     </div>
                     <h6 className="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Projects</h6>
                     <div className="row">
                       <div className="col-sm-6">
-                        <p className="m-b-10 f-w-600">Recent</p>
-                        <h6 className="text-muted f-w-400">Sam Disuja</h6>
+                        <p className="m-b-10 f-w-600">Full Name</p>
+                        <h6 className="text-muted f-w-400">{userData.first_name} {userData.last_name}</h6>
                       </div>
                       <div className="col-sm-6">
                         <p className="m-b-10 f-w-600">Most Viewed</p>

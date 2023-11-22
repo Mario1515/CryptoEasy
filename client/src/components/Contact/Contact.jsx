@@ -143,7 +143,7 @@ const Contact = () => {
                                 <i className="fa fa-phone-alt"></i>
                                 <div className="contact-text">
                                     <h2>Phone</h2>
-                                    <p>+01 15030915</p>
+                                    <p>+359 1234567</p>
                                 </div>
                             </div>
                             <div className="col-md-4 contact-item wow zoomIn" data-wow-delay="0.6s">
