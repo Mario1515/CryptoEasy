@@ -3,8 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import SinglePageHead from "../../SinglePageHead/SingePageHead";
 import * as nftService from "../../../services/nftService";
 import { NftContext } from "../../../context/NftContext";
-import { validateUrl } from "../../../services/userService";
 import Notification from "../../User/Notication/Notification";
+import { validateNftData } from "../../common/validateNft";
 
 const EditNft = () => {
 
@@ -40,27 +40,8 @@ const EditNft = () => {
 
     const {name, imageUrl, price, type, description } = nftData;
 
-    console.log(nftData);
-
     //Validations
-    if (name.toString().length < 3 || name.toString().length > 30) {
-			errors.push('Name must be between 3 and 30 characters.')
-		}
-    if (description.toString().length < 10 || description.toString().length > 100) {
-			errors.push('Description must be between 10 and 100 characters.')
-		}
-    if (Number(price.toString()) <= 0 || isNaN(Number(price))) {
-      errors.push('Price must be a positive number.');
-    }
-
-    let imageUrlValid = validateUrl(imageUrl);
-		if (!imageUrlValid) {
-			errors.push('Image URL must be a valid URL.');
-		}
-
-    if(!type){
-      errors.push('You must choose a blockchain.');
-    }
+    const errors = validateNftData(name, description, price, imageUrl, type);
 
     if (errors.length > 0 ) {
 			setShowNotification(true)
