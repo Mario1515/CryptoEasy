@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import {  useState } from "react";
+import { useState, useEffect } from "react"; // Import useEffect
+import Select from "react-select";
 import * as userService from "../../../services/userService";
 import { validateEmail, validateUrl } from "../../../services/userService";
 import { useAuthContext, withAuth } from "../../../context/AuthContext";
@@ -23,16 +24,43 @@ const Register = ({ auth }) => {
     setNotification(initialNotificationState)
   }
 
-  //Login Logic
   const { isAuthenticated } = useAuthContext();
   const navigate = useNavigate();
+
+  //Country Selector
+  const CountrySelector = () => {
+
+    const [countries, setCountries] = useState([]);
+    const [selectedCountry, setSelectedCountry] = useState(null);
+
+    useEffect(() => {
+      fetch(
+        "https://valid.layercode.workers.dev/list/countries?format=select&flags=true&value=code"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          setCountries(data.countries);
+          setSelectedCountry(data.userSelectValue);
+        });
+    }, []);
+
+    return (
+      <Select
+        options={countries}
+        value={selectedCountry}
+        onChange={(selectedOption) => setSelectedCountry(selectedOption)}
+        name="country"
+      />
+    );
+
+  };
 
   const onRegister = async (e) => {
     e.preventDefault()
 
     const formData = new FormData(e.target);
 
-    const { username, email, first_name, last_name, password, re_password, user_imageUrl } = Object.fromEntries(formData)
+    const { username, email, first_name, last_name, password, re_password, imageUrl, country } = Object.fromEntries(formData)
 
     //Validations
 
@@ -49,7 +77,11 @@ const Register = ({ auth }) => {
 			errors.push('Passwords do not match.')
 		}
 
-    let imageUrlValid = validateUrl(user_imageUrl);
+    if(country === "CA" || country === "CN" || country === "QA"){
+      errors.push('We are unable to onboard you due to legal reasons. Please contact us.')
+    }
+    
+    let imageUrlValid = validateUrl(imageUrl);
     if (! imageUrlValid) {
 			errors.push('Image URL must be a valid URL.')
 		}
@@ -75,12 +107,11 @@ const Register = ({ auth }) => {
       last_name,
       password,
       re_password,
-      user_imageUrl
+      imageUrl
     }
 
     try {
       const authData = await userService.register(userData);
-      
     
       setShowNotification(true)
 				setNotification({
@@ -137,8 +168,12 @@ const Register = ({ auth }) => {
                 <input type="password" name="re_password" placeholder="Confirm your password" required />
               </div>
               <div className="input-box">
-                <span className="details avatar-label">Avatar Url</span>
-                <input type="text" name="user_imageUrl" placeholder="Avatar Image Url" required />
+                <span className="details avatar">Avatar Url</span>
+                <input type="text" name="imageUrl" placeholder="Avatar Image Url" required />
+              </div>
+              <div className="input-box">
+                <span className="details country-label">Jurisdiction</span>
+                {CountrySelector()}
               </div>
             </div>
             <div className="button">
