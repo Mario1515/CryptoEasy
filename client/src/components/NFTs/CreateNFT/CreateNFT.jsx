@@ -1,78 +1,86 @@
-import SinglePageHead from "../../SinglePageHead/SingePageHead"
 import { useContext, useState } from "react";
-import { withAuth, AuthContext } from "../../../context/AuthContext";
-import * as nftService from  "../../../services/nftService"
 import { useNavigate } from "react-router-dom";
+import {  AuthContext } from "../../../context/AuthContext";
+import * as nftService from  "../../../services/nftService"
 
-//import { isAuth } from "../../../hoc/isAuth";
-//import {  validateUrl } from "../../../services/userService";
-//import Notification from "../../User/Notification/Notification";
-// import { useHistory } from 'react-router-dom';
+import Notification from "../../User/Notication/Notification";
+import { NftContext } from "../../../context/NftContext";
+import { validateNftData } from '/src/components/common/validateNft.js';
+import SinglePageHead from "../../SinglePageHead/SingePageHead"
+
 import "./CreateNFT.css"
 
-let errors = []
-let success = [`You have successfully created a NFT! Redirecting in 3, 2, 1..!`]
-const initialNotificationState = {type:'', message: []}
-
-
 const CreateNFT = () => {
-  
-  const navigate = useNavigate();
-  const { isAuthenticated } = useContext(AuthContext);
-  //router guarding 
-  if(!isAuthenticated){
-    navigate("/login");
+
+  //Notification handler
+  let errors = []
+  let success = [`You have successfully created a NFT! Redirecting in 3, 2, 1..`]
+  const initialNotificationState = {type:'', message: []}
+
+  const [notification, setNotification] = useState(initialNotificationState)
+	const [showNotification, setShowNotification] = useState(false);
+	const closeNotification = () => {
+	setShowNotification(false)
+	setNotification(initialNotificationState)
   }
-	//const history = useHistory();
- 
-	// Notifation handling
-	// const [notification, setNotification] = useState(initialNotificationState)
-	// const [showNotification, setShowNotification] = useState(false);
-	// const closeNotification = () => {
-	// setShowNotification(false)
-	// setNotification(initialNotificationState)
 
-	// }
-
-  //getting creator username
+  //Edit Logic
+  const navigate = useNavigate();
+  const { nftAdd } = useContext(NftContext);
   const { user } = useContext(AuthContext);
   const [creatorName, setCreatorName] = useState(user.username);
 
     async function createNFT(e){
-
         e.preventDefault();
-        
 
         const formData = new FormData(e.target);
+		    const {name, type, imageUrl, price, description } = Object.fromEntries(formData);
 
-        
-		const {name, type, imageUrl, price, description } = Object.fromEntries(formData);
+        //validation
+        const errors = validateNftData(name, description, price, imageUrl, type);
 
-        //Validatations TODO
+        if (errors.length > 0 ) {
+          setShowNotification(true)
+          setNotification({
+            type:'error',
+            message: errors
+          });
+          return;
+        }
 
         const nftData = {name, type, imageUrl, price, description, creatorName};
 
         try {
 
-          nftService.create(nftData)
-          .then(result => {
-              navigate("/allnfts");
+          const result = await nftService.create(nftData);
+
+          setShowNotification(true)
+          setNotification({
+            type:'success',
+            message: success
           });
 
+          setTimeout(() => {
+            nftAdd(result);
+            navigate(`/allnfts`)
+          }, 2000);
+
         } catch (err) {
-
-            console.log(`There is an error while creating the NFT -> // ${err}`);	
-
-        }
-
-    } 
+          errors.push(err.message)
+          setShowNotification(true)
+          setNotification({
+          type:'error',
+          message: errors	
+        });
+      }
+    }
 		
 	return (
 		<>
 		<SinglePageHead pageInfo={{name:"Create NFT", slug: "create"}} />
 		<div className="container-register">
     <div className="title sign">Create NFT</div>
-	{/* {showNotification==true ? <Notification type={notification.type} message={notification.message} closeNotification={closeNotification} /> : '' } */}
+	{showNotification==true ? <Notification type={notification.type} message={notification.message} closeNotification={closeNotification} /> : '' }
     <div className="content">
       <form action="#" method="POST" onSubmit={createNFT}>
         <div className="user-details">
@@ -113,5 +121,4 @@ const CreateNFT = () => {
 	)
 }
 
-//export default isAuth(CreateClass);
 export default CreateNFT;

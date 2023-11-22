@@ -15,6 +15,8 @@ const nftReducer = (state, action) => {
                 // If action.payload is not an array or is undefined, it will return the current state
                 return state;
             }
+        case 'ADD_NFT':
+                return [...state, action.payload];
         case 'EDIT_NFT':
             return state.map(x => x._id === action.nftId ? action.payload : x);
         case 'REMOVE_NFT':
@@ -57,7 +59,16 @@ export const NftProvider = ({
             payload: nftDetails,
             nftId,
         })
-    }
+    };
+
+    const nftAdd = (nftData) => {
+        dispatch({
+            type: 'ADD_NFT',
+            payload: nftData,
+        })
+
+        navigate('/allnfts');
+    };
 
     const nftEdit = (nftId, nftData) => {
         
@@ -79,6 +90,7 @@ export const NftProvider = ({
         <NftContext.Provider value={{
             fetchNftDetails,
             selectNft,
+            nftAdd,
             nftEdit,
             nftRemove
         }}>
