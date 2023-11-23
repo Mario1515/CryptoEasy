@@ -17,8 +17,11 @@ const nftReducer = (state, action) => {
             }
         case 'ADD_NFT':
                 return [...state, action.payload];
+        case 'FETCH_NFT_DETAILS':
         case 'EDIT_NFT':
             return state.map(x => x._id === action.nftId ? action.payload : x);
+        case 'ADD_COMMENT':
+                return state.map(x => x._id === action.nftId ? { ...x, comments: [...x.comments, action.payload] } : x);
         case 'REMOVE_NFT':
             return state.filter(x => x._id !== action.nftId);
         default:
@@ -47,18 +50,25 @@ export const NftProvider = ({
     }, []);
 
     const selectNft = (nftId) => {
-
-        console.log("Searching for nft" )
-        console.log(`this are the nfts` + nfts);
         return nfts.find(x => x._id === nftId) || {};
     };
 
     const fetchNftDetails = (nftId, nftDetails) => {
         dispatch({
-            type: 'FETCH_GAME_DETAILS',
+            type: 'FETCH_NFT_DETAILS',
             payload: nftDetails,
             nftId,
         })
+    };
+
+    const addComment = (nftId, comment) => {
+
+        console.log(`Context -> ${nftId} with comment: ${comment}`);
+        dispatch({
+            type: 'ADD_COMMENT',
+            payload: comment,
+            nftId
+        });
     };
 
     const nftAdd = (nftData) => {
@@ -84,7 +94,7 @@ export const NftProvider = ({
             type: 'REMOVE_NFT',
             nftId
         })
-    }
+    };
 
     return (
         <NftContext.Provider value={{
@@ -92,6 +102,7 @@ export const NftProvider = ({
             selectNft,
             nftAdd,
             nftEdit,
+            addComment,
             nftRemove
         }}>
             {children}
