@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
+
+
+h3 {
+    margin-top: 2%;
+    margin-left: 27%;
+    font-family: 'Manrope', sans-serif;
+    font-weight: bold;
+}
+
+.card {
+    border: none;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+.round .align-self-start {
+    border-radius: 100%;
+    width: 45px;
+    height: 40px;
+}
+
+.comment {
+    background: #41506b;
+    border: 1px solid #2fe3e7; /* Change border color to match the label color */
+    border-radius: 10px;
+    padding: 9px; /* Add padding for spacing inside the comment box */
+    margin-bottom: 7px; /* Add margin to separate comments */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add subtle box shadow for depth */
+}
+.comment p.text {
+    font-size: 13px;
+    word-break: break-all; /* Break words when needed to prevent overflow */}
+
+h6.user {
+    color: #2fe3e7;
+    font-size: 15px !important;
+    padding-left: 15px !important;
+    margin-bottom: 0;
+}
+
+h6.user:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+p.text {
+    margin-bottom: 0;
+    color: #2fe3e7 !important;
+    font-size: 13px;
+}
+
+.ml-auto {
+    margin-right: 50px;
+}
+
+p .reply {
+    color: #5C5C5C;
+    font-size: 15px;
+}
+
+@media screen and (min-width: 576px) {
+    .comment {
+        width: 470px !important;
+    }
+}
+
+/* input section  */
+
+.create-comment {
+    background-color: #41506b;
+    padding: 15px; /* Add some padding for spacing */
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+    width: 465px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .comment-label {
+    font-size: 14px; /* Make the label text smaller */
+    color: #2fe3e7; /* Set label text color */
+  }
+  
+  .comment-form {
+    margin-top: 10px; /* Add some top margin to separate the label and the form */
+  }
+  
+  .comment-textarea {
+    width: 100%; /* Make the textarea full width */
+    padding: 10px; /* Add padding to the textarea */
+    margin-bottom: 10px; /* Add some bottom margin for spacing */
+    background: rgba(255, 255, 255, 0);
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    border-radius: 20px;
+    font-size: 16px;
+    color:#2fe3e7;
+    
+    resize: vertical; /* Allow vertical resizing of the textarea */
+  }
+  
+  .comment-textarea:focus {
+    outline: none; /* Remove the default focus outline */
+    transition: all 0.3s ease;
+    border-color: #1BFFFF; /* Change the border color when focused if needed */
+  }
+  .comment-btn {
+  
+    height: 45px;
+    margin: 30px 2;
+    margin-left: 120px;
+   border-radius: 25px;
+   border: none;
+   color: #fff;
+   font-size: 15px;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(to right, #3b3e93 , #1BFFFF);
+  }
+  
+  .comment-btn:hover {
+    background:#1BFFFF;
+	color:#211323;
+    transition: all 0.7s ease;
+  }

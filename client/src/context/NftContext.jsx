@@ -63,7 +63,6 @@ export const NftProvider = ({
 
     const addComment = (nftId, comment) => {
 
-        console.log(`Context -> ${nftId} with comment: ${comment}`);
         dispatch({
             type: 'ADD_COMMENT',
             payload: comment,
