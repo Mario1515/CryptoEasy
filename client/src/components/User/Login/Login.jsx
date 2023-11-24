@@ -35,7 +35,7 @@ const Login = () => {
       const { email, password } = Object.fromEntries(new FormData(e.target));
       const userData = { email, password };
   
-      const authData = await userService.login(userData);
+      const authData = await userService.login(email, password);
   
       if(authData.code === 403) {
         errors.push('Invalid username or password!')

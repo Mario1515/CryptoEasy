@@ -7,7 +7,13 @@ import { useAuthContext } from "../../context/AuthContext";
 import "./Header.css"; // Custom styling
 
 const Header = () => {
-  const { isAuthenticated } = useAuthContext();
+  const { user, isAuthenticated } = useAuthContext();
+
+  if(user.username){
+
+  } else {
+    console.log("User is not authenticated");
+  }
 
   return (
     <>
@@ -57,6 +63,7 @@ const Header = () => {
             </div>
           </div>
         </div>
+        {user.username ? (<div className="welcome-user">Welcome, {user.username}!</div>) : (<div className="welcome-user">Welcome, Guest!</div>)}
       </div>
     </>
   );
