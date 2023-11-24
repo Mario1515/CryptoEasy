@@ -4,12 +4,16 @@ import * as commentService from "../../../services/commentService";
 import { NftContext } from "../../../context/NftContext";
 import { useContext } from "react";
 import { timeNow } from "../../common/timeNow";
+import { AuthContext } from "../../../context/AuthContext";
+import { NavLink } from "react-router-dom";
 
 import "./CommentsSection.css";
+
 
 const CommentsSection = ({ currentNft, addComment }) => {
   const { fetchNftDetails } = useContext(NftContext);
   const currentTime = timeNow();
+  const { user, isAuthenticated } = useContext(AuthContext);
 
   // Comment Func
   const addCommentHandler = async (e) => {
@@ -52,6 +56,8 @@ const CommentsSection = ({ currentNft, addComment }) => {
         </div>
 
         {/* Add comment */}
+
+        {isAuthenticated ? (  
         <article className="create-comment ml-3">
           <label className="comment-label">Add new comment:</label>
           <form className="comment-form" onSubmit={addCommentHandler}>
@@ -66,9 +72,15 @@ const CommentsSection = ({ currentNft, addComment }) => {
             </button>
           </form>
         </article>
+          ): (
+            <div className="comment-login">
+            <NavLink to="/login" className="login-link-log" align="center">
+            To comment, please sign in. <strong>Click here!</strong>
+            </NavLink>
+            </div>
+          )}
 
         {/* All comments */}
-
         <div className="container mt-3">
           <div className="row">
             <div className="col-md-12">

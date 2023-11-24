@@ -176,3 +176,18 @@ p.text {
       color: #1BFFFF;
       text-align: center;
     }
+
+    /* Need to login to comment  */
+
+    .login-link-log {
+      padding-bottom: 20px;
+      color: #080808;
+      font-size: 16px; /* Adjust the initial font size */
+      transition: color 0.3s ease, text-shadow 0.3s ease, font-size 0.3s ease; /* Added transitions */
+  }
+  
+  .login-link-log:hover {
+      color: #080808df;
+      text-decoration: none;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Added text shadow */
+  }
