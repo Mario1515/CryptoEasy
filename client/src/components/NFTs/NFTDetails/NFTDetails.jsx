@@ -57,83 +57,98 @@ const NFTDetails = () => {
     }
   };
 
-  return (
-    <>
-      <SinglePageHead
-        pageInfo={{
-          name: `${currentNft.name}`,
-          slug: `nft-details/${currentNft._id}`,
-        }}
-      />
-
-      <div className="single">
-        <div className="container">
-          <div className="row details-row">
-            <div className="col-lg-8">
-              <div className="single-content wow fadeInUp">
-                <img src={currentNft.imageUrl} />
-                <h2>{currentNft.name}</h2>
-                <p>{currentNft.description}</p>
+  return (<>
+    <SinglePageHead
+      pageInfo={{
+        name: `${currentNft.name}`,
+        slug: `nft-details/${currentNft._id}`,
+      }}
+    />
+  
+    {/* Name and Image of NFT */}
+    <div className="single">
+      <div className="container">
+        <div className="row details-row">
+          <div className="col-lg-8">
+            <div className="single-content wow fadeInUp">
+              <img src={currentNft.imageUrl} />
+            </div>
+  
+            {/* NFT details */}
+            <div className="nft-details">
+              <div className="container mt-3">
+                <div className="row">
+                  <div className="col-md-12">
+                    <h1 className="nft-title">
+                      <span className="label">NFT Name:</span> {currentNft.name}
+                    </h1>{" "}
+                    <div className="category-widget">
+                      <ul>
+                        <li>
+                          <span className="created-label">Created By: </span>{" "}
+                          {currentNft.creatorName}
+                        </li>
+                        <li>
+                          <span className="blockchain-label">Blockchain: </span>{" "}
+                          {currentNft.type}
+                        </li>
+                        <li>
+                          <span className="price-label">Price: </span> $
+                          {currentNft.price}
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="description-section">
+                      <span className="description-label"> Description: </span>{" "}
+                      <p>{currentNft.description}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-
-            <div className="col-lg-4">
-              <div className="sidebar">
-                <div className="sidebar-widget wow fadeInUp"></div>
-
-                <div className="sidebar-widget wow fadeInUp">
-                  <h2 className="widget-title">NFT Details:</h2>
-                </div>
-                <div className="sidebar-widget wow fadeInUp">
-                  <div className="category-widget">
-                    <ul>
-                      <li>
-                        <strong>Created By: </strong> {currentNft.creatorName}
-                      </li>
-                      <li>
-                        <strong>Blockchain: </strong> {currentNft.type}
-                      </li>
-                      <li>
-                        <strong>Price: </strong> {currentNft.price}
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                {/* Buttons for Creator */}
-                {isAuthenticated && isOwner ? (
-                  <div className="author-btns">
-                    <button className="submit login details">
-                      {" "}
-                      <NavLink
-                        className="btn"
-                        to={{
-                          pathname: `/edit/${currentNft._id}/edit`,
-                        }}
-                      >
-                        EDIT
-                      </NavLink>
-                    </button>
-                    <button className="submit login details">
-                      {" "}
-                      <NavLink className="btn" onClick={nftDeleteHandler}>
-                        DELETE
-                      </NavLink>{" "}
-                    </button>
-                  </div>
-                ) : null}
-
-                {/* COMMENT SECTION  */}
-                <CommentsSection
-                  currentNft={currentNft}
-                  addComment={addComment}
-                />
+  
+            {/* Buttons for Creator */}
+            {/* {isAuthenticated && isOwner ? (
+              <div className="author-btns">
+                <button className="submit login details">
+                  {" "}
+                  <NavLink
+                    className="btn"
+                    to={{
+                      pathname: `/edit/${currentNft._id}/edit`,
+                    }}
+                  >
+                    EDIT
+                  </NavLink>
+                </button>
+                <button className="submit login details">
+                  {" "}
+                  <NavLink className="btn" onClick={nftDeleteHandler}>
+                    DELETE
+                  </NavLink>{" "}
+                </button>
               </div>
+            ) : null} */}
+          </div>
+  
+          {/* Comment Section */}
+          <div className="col-lg-4">
+            <div className="sidebar">
+              <div className="comment-section"></div>
+  
+              {/* COMMENT SECTION */}
+              <CommentsSection
+                currentNft={currentNft}
+                addComment={addComment}
+              />
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
+  </>
   );
 };
 
 export default NFTDetails;
+
