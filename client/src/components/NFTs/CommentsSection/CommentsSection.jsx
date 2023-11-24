@@ -43,7 +43,9 @@ const CommentsSection = ({ currentNft, addComment }) => {
         <div className="row">
           <div className="col-md-12">
             <ul className="list-unstyled">
-              Comments
+            <div class="seven">
+                  <h1>Comments</h1>
+          </div>
             </ul>
           </div>
         </div>
