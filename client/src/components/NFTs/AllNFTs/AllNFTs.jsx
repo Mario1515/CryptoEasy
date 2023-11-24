@@ -1,5 +1,4 @@
 import SinglePageHead from "../../SinglePageHead/SingePageHead";
-//import SingleClassCard from "../SingleClassCard/SingleClassCard";
 import { Link, NavLink } from 'react-router-dom';
 import { useState, useEffect} from "react";
 import * as nftService from "../../../services/nftService";
@@ -8,32 +7,58 @@ import SingleNFTCard from "../SingleNftCard/SingleNFTCard";
 
 import './AllNFTs.css'
 
-//import * as classService from '../../../services/classService';
 
 let initialState = []
 
 const AllNFTs = () => {
     
 	const [allNFTs, setAllNFTs] = useState([]);
-	//const [activeFilter, setActiveFilter] = useState('');
+	const [activeFilter, setActiveFilter] = useState('');
     
     useEffect( ()=>{
 
 	 async function getAllNFTs() {
         try {
             const result = await nftService.getAll();
+            initialState = [...result];
             setAllNFTs(result && Array.isArray(result) ? result : []);
         } catch (error) {
 
             console.error('Error fetching NFTs:', error);
         }
  	}
-    
-     getAllNFTs()
+    getAllNFTs()
 
-	 },[])
+	 },[]);
 
-    //TODO FILTERS
+
+    // FILTERS
+
+    function showAll(e) {
+		e.preventDefault();
+		setAllNFTs(initialState)
+		setActiveFilter('filter-active-nft')
+    }
+    function showEthereum(e) {
+		e.preventDefault();
+		const ethereum = initialState.filter( n => n.type== "Ethereum");
+        setAllNFTs(ethereum);
+    }
+    function showSolana(e) {
+		e.preventDefault();
+		const solana = initialState.filter( n => n.type== "Solana");
+        setAllNFTs(solana);
+    }
+    function showPolygon(e) {
+		e.preventDefault();
+		const polygon = initialState.filter( n => n.type== "Polygon");
+        setAllNFTs(polygon);
+    }
+    function showBnb(e) {
+		e.preventDefault();
+		const bnb = initialState.filter( n => n.type== "Bnb");
+        setAllNFTs(bnb);
+    }
 
 	return (
 		<>
@@ -72,12 +97,12 @@ const AllNFTs = () => {
                 </div>
                 <div className="row">
                     <div className="col-12">
-                        <ul id="class-filter">
-                       <li>	<NavLink exact="true" to="/all" data-filter="*"  className="filter-classes-navlink"  >All Blockhains</NavLink> </li>
-                            <li> <NavLink to="/balance" data-filter=".filter-1"  className="filter-classes-navlink"  > Ethereum </NavLink></li>
-                            <li> <NavLink to="/hatha" data-filter=".filter-2"  className="filter-classes-navlink"  > Solana </NavLink></li>
-                            <li> <NavLink to="/children" data-filter=".filter-3"  className="filter-classes-navlink" > Polygon </NavLink></li>
-                            <li> <NavLink to="/dance" data-filter=".filter-4" className="filter-classes-navlink" > BNB </NavLink></li>
+                        <ul id="nft-filter">
+                       <li>	<NavLink exact="true" to="/all" data-filter="*"  className="nft-button-filter" onClick={showAll} >All Blockhains</NavLink> </li>
+                            <li> <NavLink to="/ethereum" data-filter=".filter-1"  className="nft-button-filter" onClick={showEthereum} > Ethereum </NavLink></li>
+                            <li> <NavLink to="/solana" data-filter=".filter-2"  className="nft-button-filter" onClick={showSolana}  > Solana </NavLink></li>
+                            <li> <NavLink to="/polygon" data-filter=".filter-3"  className="nft-button-filter" onClick={showPolygon} > Polygon </NavLink></li>
+                            <li> <NavLink to="/bnb" data-filter=".filter-4" className="nft-button-filter" onClick={showBnb} > BNB </NavLink></li>
                         </ul>
                     </div>
                 </div>

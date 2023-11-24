@@ -3,7 +3,7 @@
     padding: 7px; /* Adjust padding as needed */
     border-radius: 8px; /* Add border-radius for rounded corners */
     transition: transform 0.3s ease-in-out;
-    
+    text-decoration: none;
 
     border: 4px solid #343a40; /* Set your desired border color */
     border-style: /* Set your desired border style (dashed, solid, etc.) */
@@ -19,6 +19,7 @@
     padding: 0;
     border: none;
     transition: transform 0.3s ease-in-out;
+    text-decoration: none;
     
     /* ... other styles */
   }
@@ -26,7 +27,7 @@
   .class-img img {
     width: 100%;
     height: auto;
-
+    text-decoration: none;
   }
   
 
@@ -34,4 +35,5 @@
   transform: scale(1.);
   border: 2x solid #35bcbf; /* Adjust border color */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a shadow */
+  text-decoration: none;
 }

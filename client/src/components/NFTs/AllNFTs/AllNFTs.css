@@ -1,14 +1,14 @@
-.filter-classes-navlink:hover {
+.filter-nfts-navlink:hover {
 	background: #343148;
     color: #F7CAC9;
 }
 
-.filter-classes-navlink:active {
+.filter-nfts-navlink:active {
 	background: #343148;
     color: #F7CAC9;
 }
 
-.classes-header-text {
+.nfts-header-text {
 	text-align:center!important;
 	margin-bottom:30px!important;
 }
@@ -22,3 +22,46 @@
   .nft-img img {
 	max-width: 120%; /* Adjust the max-width to make the image a bit smaller */
   }
+
+  .nft-button-filter {
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #ffffff;
+    background: #343148;
+    border-radius: 0;
+    transition: .2s;
+	text-decoration: none; /* Remove underline */
+
+	
+
+
+}
+
+.nft-button-filter:hover {
+    color: #ffffff;
+    background: #11999e;
+	text-decoration: none; /* Remove underline */
+
+	transition: 0.3s ease;
+ 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.8);
+    transform: translateY(-10px) scale(1.01);
+    .entry-title {
+      background-position: -100% 0;
+    }
+}
+
+#nft-filter {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 60px;
+	
+  }
+  
+  #nft-filter li {
+	margin-right: 10px; /* Adjust spacing between items */
+  }
+  
