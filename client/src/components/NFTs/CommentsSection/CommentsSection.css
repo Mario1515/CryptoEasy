@@ -161,3 +161,18 @@ p.text {
         background-color:#41506b;
     }
     
+
+    /* No comment */
+
+    .no-comment {
+      background-color: #41506b;
+      padding: 15px; /* Add some padding for spacing */
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+      width: 467px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      margin-left: -79px !Important;
+      color: #1BFFFF;
+      text-align: center;
+    }

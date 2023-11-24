@@ -107,6 +107,7 @@
   color:#ccc;
   font-weight: 500;
   text-shadow: 1px 0px 5px rgba(0,0,0,0.42);
+  word-break: break-all; /* Break words when needed to prevent overflow */
 }
 
   .nft-details .category-widget {
@@ -124,7 +125,8 @@
   }
   
   .nft-details .description-section {
-    width: 100%; /* Full width by default */
+    width: 200%; /* Full width by default */
+    word-break: break-all; 
   }
   
   /* Media query for larger screens to adjust the layout */

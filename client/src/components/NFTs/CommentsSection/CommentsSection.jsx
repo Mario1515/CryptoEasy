@@ -18,7 +18,7 @@ const CommentsSection = ({ currentNft, addComment }) => {
 
     const comment = formData.get("comment");
 
-    
+
     try {
       addComment(currentNft._id, comment);
 
@@ -30,7 +30,7 @@ const CommentsSection = ({ currentNft, addComment }) => {
       fetchNftDetails(currentNft._id, { ...nftDetails, comments: nftComments.map(x => `${x.user.username}: ${x.text}`) });
 
     } catch (err) {
-      
+
       console.log(`There was an error submitting the comment: ${err}`);
     }
   };
@@ -39,77 +39,81 @@ const CommentsSection = ({ currentNft, addComment }) => {
     <>
       {/* PREVIEW COMMENTS SECTION */}
       <div className="comments-section-container">
-      <div className="container mt-1">
-        <div className="row">
-          <div className="col-md-12">
-            <ul className="list-unstyled">
-            <div class="seven">
+        <div className="container mt-1">
+          <div className="row">
+            <div className="col-md-12">
+              <ul className="list-unstyled">
+                <div class="seven">
                   <h1>Comments</h1>
+                </div>
+              </ul>
             </div>
-            </ul>
           </div>
         </div>
-      </div>
 
-      {/* Add comment */}
-            <article className="create-comment ml-3">
-            <label className="comment-label">Add new comment:</label>
-            <form className="comment-form" onSubmit={addCommentHandler}>
-                <textarea
-                name="comment"
-                placeholder="Write your comment..."
-                className="comment-textarea"
-                style={{ height: '60px' }}
-                />
-                <button type="submit" className="btn submit comment-btn">
-                Add Comment
-                </button>
-            </form>
-            </article>
+        {/* Add comment */}
+        <article className="create-comment ml-3">
+          <label className="comment-label">Add new comment:</label>
+          <form className="comment-form" onSubmit={addCommentHandler}>
+            <textarea
+              name="comment"
+              placeholder="Write your comment..."
+              className="comment-textarea"
+              style={{ height: '60px' }}
+            />
+            <button type="submit" className="btn submit comment-btn">
+              Add Comment
+            </button>
+          </form>
+        </article>
 
-      {/* All comments */}
+        {/* All comments */}
 
-      <div className="container mt-3">
-        <div className="row">
-          <div className="col-md-12">
-            <ul className="list-unstyled ">
-              {currentNft.comments?.map((comment, index) => {
-                const parts = comment.split(':');
+        <div className="container mt-3">
+          <div className="row">
+            <div className="col-md-12">
+              <ul className="list-unstyled">
+                {currentNft.comments?.length > 0 ? (
+                  currentNft.comments.map((comment, index) => {
+                    const parts = comment.split(':');
 
-                if (parts.length === 2) {
-                  const username = parts[0].trim();
-                  const text = parts[1].trim();
+                    if (parts.length === 2) {
+                      const username = parts[0].trim();
+                      const text = parts[1].trim();
 
-                  if (username && text) {
-                    return (
-                      <li key={index} className="comment">
-                        <div className="media-body d-flex align-items-center">
-                          <img
-                            src="https://img.icons8.com/bubbles/100/000000/couple-icloud.png"
-                            className="align-self-start mr-3 rounded-circle"
-                            alt=""
-                            style={{ width: '60px', height: '60px' }}
-                          />
-                          <div className="media-body">
-                            <div className="row d-flex align-items-center">
-                              <h6 className="user pt-2">{username}</h6>
-                              <div className="ml-auto " style={{ marginRight: '40px', marginTop: '1px' }}>
-                                <p className="text">{currentTime}</p>
+                      if (username && text) {
+                        return (
+                          <li key={index} className="comment">
+                            <div className="media-body d-flex align-items-center">
+                              <img
+                                src="https://img.icons8.com/bubbles/100/000000/couple-icloud.png"
+                                className="align-self-start mr-3 rounded-circle"
+                                alt=""
+                                style={{ width: '60px', height: '60px' }}
+                              />
+                              <div className="media-body">
+                                <div className="row d-flex align-items-center">
+                                  <h6 className="user pt-2">{username}</h6>
+                                  <div className="ml-auto" style={{ marginRight: '40px', marginTop: '1px' }}>
+                                    <p className="text">{currentTime}</p>
+                                  </div>
+                                </div>
+                                <p className="text">{text}</p>
                               </div>
                             </div>
-                            <p className="text">{text}</p>
-                          </div>
-                        </div>
-                      </li>
-                    );
-                  }
-                }
-                return null;
-              })}
-            </ul>
+                          </li>
+                        );
+                      }
+                    }
+                    return null;
+                  })
+                ) : (
+                  <p className="no-comment">No comments.</p>
+                )}
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </>
   );
@@ -120,6 +124,3 @@ export default CommentsSection;
 
 
 
-        
-        {/* {!currentNft.comments && <p className="no-comment">No comments.</p>}
-      </div> */}
