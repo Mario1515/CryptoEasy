@@ -137,3 +137,95 @@
       margin-left: 0px; /* Add space between the sections */
     }
   }
+
+
+  /* Buttons EDIT DELETE */
+
+  .author-btns {
+    margin-top: 20px; /* Adjust the margin based on your design */
+    margin-right: 30px;
+  }
+  
+  /* Styles for individual buttons */
+  .submit {
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #3b3e93 , #1BFFFF);
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+  }
+  
+  .submit:hover {
+    background:#1BFFFF;
+    color:#211323;
+  }
+
+  .edit-btn{
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: radial-gradient(circle, #56698a, #41506b);
+    border: 0;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    text-decoration: none;
+    margin-left: 140px;
+
+    transition: 0.3s ease;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  &:hover {
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.8);
+    transform: translateY(-10px) scale(1.01);
+    .entry-title {
+      background-position: -100% 0;
+    }
+  }
+  }
+  .edit-btn:hover {
+    text-decoration: none;
+    color:#fff
+  }
+
+  .delete-btn{
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: radial-gradient(circle, #56698a, #41506b);
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+
+    transition: 0.3s ease;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  &:hover {
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.8);
+    transform: translateY(-10px) scale(1.01);
+    .entry-title {
+      background-position: -100% 0;
+    }
+  }
+  }
+
+  .delete-btn:hover {
+    text-decoration: none;
+    color:#fff
+  }
+
+

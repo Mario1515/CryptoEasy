@@ -108,12 +108,12 @@ const NFTDetails = () => {
             </div>
   
             {/* Buttons for Creator */}
-            {/* {isAuthenticated && isOwner ? (
+            {isAuthenticated && isOwner ? (
               <div className="author-btns">
-                <button className="submit login details">
+                <button className="btn">
                   {" "}
                   <NavLink
-                    className="btn"
+                    className="edit-btn"
                     to={{
                       pathname: `/edit/${currentNft._id}/edit`,
                     }}
@@ -121,14 +121,15 @@ const NFTDetails = () => {
                     EDIT
                   </NavLink>
                 </button>
-                <button className="submit login details">
+                <button className="btn">
                   {" "}
-                  <NavLink className="btn" onClick={nftDeleteHandler}>
+                  <NavLink className="delete-btn"
+                   onClick={nftDeleteHandler}>
                     DELETE
                   </NavLink>{" "}
                 </button>
               </div>
-            ) : null} */}
+            ) : null}
           </div>
   
           {/* Comment Section */}
