@@ -11,6 +11,10 @@ import './AllNFTs.css'
 let initialState = []
 
 const AllNFTs = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     
 	const [allNFTs, setAllNFTs] = useState([]);
 	const [activeFilter, setActiveFilter] = useState('');

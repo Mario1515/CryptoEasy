@@ -15,7 +15,7 @@ const Hero = () => {
                 Join Crypto Easy today and be part of a community that's shaping the future of finance!
                 </p>
                 <div className="hero-btn">
-                  <NavLink className="btn" to="/classes">Explore Crypto</NavLink>
+                  <NavLink className="btn" to="/crypto">Explore Crypto</NavLink>
                   <NavLink className="btn" to="/contact">Contact Us</NavLink>
                 </div>
               </div>

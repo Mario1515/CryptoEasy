@@ -19,6 +19,7 @@ import EditNft from "./components/NFTs/EditNft/EditNft";
 import Contact from "./components/Contact/Contact.jsx";
 import Profile from "./components/User/Profile/Profile.jsx";
 import CryptoDetails from "./components/Crypto/CryptoDetails/CryptoDetails.jsx";
+import ScrollToTop from "./hooks/ScrollToTop.js";
 
 
 const App = () => {

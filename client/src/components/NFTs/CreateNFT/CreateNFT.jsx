@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {  AuthContext } from "../../../context/AuthContext";
 import * as nftService from  "../../../services/nftService"
@@ -11,6 +11,7 @@ import SinglePageHead from "../../SinglePageHead/SingePageHead"
 import "./CreateNFT.css"
 
 const CreateNFT = () => {
+
 
   //Notification handler
   let errors = []
