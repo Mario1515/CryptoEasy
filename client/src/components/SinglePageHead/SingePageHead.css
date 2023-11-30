@@ -9,17 +9,15 @@
 .page-header h2,
 .page-header a {
     color: black;
-    /* Other styles if needed */
 }
 
 .page-header a:hover {
-    /* Styles for the links on hover (optional) */
-    color: #555; /* Change text color on hover, if desired */
+    
+    color: #555; 
 }
 
 .page-header a:hover {
-    /* Styles for the links on hover (optional) */
-    /* You can add hover styles if needed */
+
     text-decoration: none;
-    color: #555; /* Change text color on hover, if desired */
+    color: #555; 
 }

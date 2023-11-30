@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,600&display=swap');
+
+/* Background behind the details */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Set a higher z-index for the overlay */
+}
+
+  
+  .overlay:hover {
+    cursor: pointer;
+  }
+
+  .custom-modal {
+    width: 30%;
+    height: 65%;
+    background-color: rgb(33, 37, 41, 0.75); /* Bootstrap bg-gray-300 with 75% opacity */
+    border-radius: 1rem; /* Bootstrap rounded-lg equivalent */
+    color: white;
+    z-index: 1100; /* Set a higher z-index for the modal */
+  }
+
+  
+  /* Crypto Container  TITLE SYMBOL*/
+
+  .flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  .column-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding-right: 0.5rem;
+  }
+  
+  .image-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-left: 1rem;
+    padding-top: 1rem;
+  }
+  
+  .image {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: capitalize;
+    font-weight: medium;
+    font-family: 'Nunito Sans', sans-serif;
+    margin-bottom: 1.3rem;
+    margin-left: 0.5rem;
+    line-height: 0.6rem;
+  }
+  
+  .symbol {
+    display: inline-block;
+    padding: 0.25rem 1.5rem; /* Adjust padding as needed */
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    background-color: rgba(20, 255, 236, 0.25);
+    color: rgb(20, 255, 236);
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    font-size: 0.9rem; /* Adjust font size as needed */
+  }
+
+  /* Crypto Details PRICE ETC */
+
+  .crypto-value-h2 {
+    color:turquoise
+  }
+
+  .crypto-title{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+   }
+
+  .big-containter-details {
+    display: flex;
+    width: 100%;
+    margin-top: 3rem;
+    margin-left: 2rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .column-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
+  .between-details {
+    justify-content: space-between;
+    
+  }
+
+  /* Price percentage */
+
+  .float-right{
+    margin-right: 6rem;
+  
+  }
+  .text-green {
+    color: #28a745 !important; /* Equivalent to Bootstrap's 'text-green' class */
+    font-weight: 500; /* Make the text bold */
+  }
+  
+  .text-red {
+    color: #dc3545 !important; /* Equivalent to Bootstrap's 'text-red' class */
+    font-weight: 500; /* Make the text bold */
+  }
+  
+  .fill-green {
+    fill: #28a745 !important; /* Equivalent to Bootstrap's 'fill-green' class */
+  }
+  
+  .fill-red {
+    fill: #dc3545 !important; /* Equivalent to Bootstrap's 'fill-red' class */
+  }
+  
+  .rotate-180 {
+    transform: rotate(180deg) !important; /* Equivalent to Bootstrap's 'rotate-180' class */
+  }
+
+  /* Price numbers  */
+
+  /* Market cap  */
+  
+  .inner-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+  }
+
+.crypto-value-h2-small{
+  color:turquoise;
+  font-size:1rem;
+}
+
+/* Fully dulited */
+
+.flex-col-container {
+  display: flex;
+  flex-direction: column;
+}
+.fully-diluted{
+  margin-left: 10rem;
+  margin-top: -3rem;
+}
+
+/* High Low Prices */
+
+.market-data-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-top: 1rem;
+  margin-left: 2rem;
+}
+
+.market-data-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Market Supply */
+
+.market-data-item.custom-margin {
+  margin-right: 1.85rem !important;
+}
+
+
+
+/* All-time Prices % */ 
+
+
+.market-data-item.custom-margin1{
+margin-left: 5rem;
+}

@@ -1,10 +1,8 @@
 // Search.jsx
-
 import debounce from "lodash.debounce";
 import React, { useContext, useState } from "react";
-import searchIcon from "../../assets/search-icon.svg";
-import { CryptoContext } from "../../context/CryptoContext";
-import searchcss from "./Search.css";
+import searchIcon from "../../../assets/search-icon.svg";
+import { CryptoContext } from "../../../context/CryptoContext";
 
 const SearchInput = ({ handleSearch }) => {
   const [searchText, setSearchText] = useState("");

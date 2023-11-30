@@ -1,7 +1,7 @@
 // Filters.jsx
 import React, { useContext, useRef } from "react";
 import Search from "./Search";
-import { CryptoContext } from "../../context/CryptoContext";
+import { CryptoContext } from "../../../context/CryptoContext";
 import "./filters.css"; // Import your custom CSS file
 
 const Filters = () => {

@@ -18,6 +18,7 @@ import NftOwner from "./components/common/NftOwner";
 import EditNft from "./components/NFTs/EditNft/EditNft";
 import Contact from "./components/Contact/Contact.jsx";
 import Profile from "./components/User/Profile/Profile.jsx";
+import CryptoDetails from "./components/Crypto/CryptoDetails/CryptoDetails.jsx";
 
 
 const App = () => {
@@ -29,7 +30,8 @@ const App = () => {
             <Header />
             <Routes>
               <Route path="/" exact element={<Hero />} />
-              <Route path="/crypto" exact element={<Crypto />} />
+              <Route path="/crypto" element={<Crypto />} />
+              {/* <Route path="crypto/:coinId" element={<CryptoDetails />} /> */}
               <Route path="/register" exact element={<Register />} />
               <Route path="/login" exact element={<Login />} />
               <Route path="/logout" exact element={<Logout />} />

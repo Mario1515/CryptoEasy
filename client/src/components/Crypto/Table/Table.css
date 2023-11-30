@@ -2,7 +2,7 @@
 
 
 .table-frame {
-  border: 2px solid #dee2e6;
+  border: #dee2e6;
   border-radius: 0.5rem; /* Adjust the border-radius for round corners */
   overflow: hidden;
   width: 60%;
@@ -10,16 +10,18 @@
   margin-top: 20px;
 }
 
+/* about the titles */
 .table {
   width: 100%;
   margin-bottom: 1rem;
-  background-color: black;
+  background-color: #343a40;
   color: white;
   border-collapse: collapse;
   font-size: 14px; /* Adjust the font size */
 }
+
 .table th, .table td {
-  padding: 0.75rem; /* Adjust the padding */
+  padding: 0.rem; /* Adjust the padding */
   vertical-align: top;
   border-top: 1px solid #dee2e6;
 }
@@ -42,6 +44,30 @@
   text-decoration: underline;
 }
 
+.align-middle-name{
+  color: cyan;
+  font-weight: normal;
+  transition: color 0.3s, font-weight 0.3s;
+  
+  &:hover {
+    cursor: pointer;
+    color: darkcyan;
+    font-weight: bold;
+  }
+}
+
+.cursor-pointer{
+  color: cyan;
+  font-weight: normal;
+  transition: color 0.3s, font-weight 0.3s;
+  
+  &:hover {
+    cursor: pointer;
+    color: darkcyan;
+    font-weight: bold;
+  }
+}
+
 .table button {
   background-color: transparent;
   border: none;
@@ -53,6 +79,7 @@
   width: 1rem; /* Adjust the width */
   height: 1rem; /* Adjust the height */
   margin-right: 0.5rem; /* Add margin for spacing if needed */
+  cursor: pointer;
 }
 
 .table svg:hover {

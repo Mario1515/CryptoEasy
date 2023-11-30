@@ -1,8 +1,10 @@
 .footer {
-    position: relative;
-    margin-top: 44px;
+    margin-top: auto; /* Push the footer to the bottom of the container */
     background: rgb(33, 37, 41);
-}
+    color: #ffffff;
+    text-align: center;
+    padding: 20px; /* Adjust the padding as needed */
+  }
 
 .footer .footer-info {
     position: relative;

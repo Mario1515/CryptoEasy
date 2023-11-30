@@ -1,10 +1,8 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { createContext, useLayoutEffect, useState } from "react";
 
-// create context object
 export const CryptoContext = createContext({});
 
-// create the provider component
+//Crypto Provider component
 export const CryptoProvider = ({ children }) => {
   const [cryptoData, setCryptoData] = useState();
   const [searchData, setSearchData] = useState();
@@ -15,9 +13,8 @@ export const CryptoProvider = ({ children }) => {
   const [currency, setCurrency] = useState("usd");
   const [sortBy, setSortBy] = useState("market_cap_desc");
   const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(250);
+  const [totalPages, setTotalPages] = useState(100);
   const [perPage, setPerPage] = useState(10);
-
 
 
   const [error, setError] = useState({ data: "", coinData: "", search: "" });
@@ -49,17 +46,16 @@ export const CryptoProvider = ({ children }) => {
     // }
   };
 
-  const getCoinData = async (coinid) => {
+  const getCoinData = async (coinId) => {
     setCoinData();
+
     try {
       const data = await fetch(
-        `https://api.coingecko.com/api/v3/coins/${coinid}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=true&sparkline=false`
+        `https://api.coingecko.com/api/v3/coins/${coinId}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=true&sparkline=false`
       )
         .then((res) => res.json())
         .then((json) => json);
-
-      // console.log("CoinData", data);
-      setCoinData(data);
+        setCoinData(data);
     } catch (error) {
       console.log(error);
     }

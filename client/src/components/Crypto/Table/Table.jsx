@@ -1,19 +1,34 @@
-// table.jsx
-import React, { useContext } from "react";
-import { CryptoContext } from "../../context/CryptoContext";
+import React, { useContext, useState, useEffect } from "react";
+import { CryptoContext } from "../../../context/CryptoContext";
 import { NavLink, redirect } from "react-router-dom";
 import "./Table.css"; // Custom styling
-import ErrorTable from "./ErrorTable";
+import { testCryptoData } from "../../common/testCryptoData";
+import CryptoDetails from "../CryptoDetails/CryptoDetails";
+
 
 const Table = () => {
-  let { cryptoData } = useContext(CryptoContext);
+
+  const [selectedData, setSelectedData] = useState(null);
+  const [isCryptoDetailsVisible, setCryptoDetailsVisible] = useState(false);
+  let cryptoData = testCryptoData();
+
+  const handleCryptoClick = (data) => {
+    setSelectedData(data);
+    setCryptoDetailsVisible(true);
+  };
+
+  const closeCryptoDetails = () => {
+    setSelectedData(null);
+    setCryptoDetailsVisible(false);
+  };
+
+  // let { cryptoData } = useContext(CryptoContext);
 
   return (
-
     <div className="table-frame">
       {cryptoData ? (
-        <table class="table table-dark table-hover">
-          <thead className="thead-dark">
+        <table className="table">
+        <thead className="thead-dark">
             <tr>
               <th>Asset</th>
               <th>Name</th>
@@ -38,24 +53,25 @@ const Table = () => {
                       fill="cyan"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      {/* SVG Path */}
                     </svg>
                   </button>
                   <img
-                    className="w-[0.5rem] h-[0.5rem] mx-1.5"
+                    className="image-crypto"
                     src={data.image}
                     alt={data.name}
+                    onClick={() => handleCryptoClick(data)}
                   />
-                  <span>
-                    <NavLink to={`/${data.id}`} className="cursor-pointer">
-                      {(data.symbol.toUpperCase())}
-                    </NavLink>
+                  <span
+                    className="cursor-pointer"
+                    onClick={() => handleCryptoClick(data)}>
+                    {data.symbol.toUpperCase()}
                   </span>
                 </td>
-                <td className="align-middle">
-                  <NavLink to={`/${data.id}`} className="cursor-pointer">
-                    {data.name}
-                  </NavLink>
+                <td className="align-middle-name">
+                      <span className="name-span"
+                      onClick={() => handleCryptoClick(data)}>
+                      {data.name}
+                      </span>
                 </td>
                 <td className="align-middle">
                   {new Intl.NumberFormat("en-IN", {
@@ -77,13 +93,19 @@ const Table = () => {
                   {Number(data.price_change_percentage_7d_in_currency).toFixed(2)}
                 </td>
               </tr>
+
             ))}
           </tbody>
         </table>
-      ) : <ErrorTable />}
-    </div>
+      ) : null}
 
+          {isCryptoDetailsVisible && (
+        <CryptoDetails data={selectedData} onClose={closeCryptoDetails} />
+      )}
+
+    </div>
   );
 };
+
 
 export default Table;
