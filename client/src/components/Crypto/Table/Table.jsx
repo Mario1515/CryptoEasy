@@ -110,7 +110,25 @@ const Table = () => {
           {isCryptoDetailsVisible && (
         <CryptoDetails data={selectedData} onClose={closeCryptoDetails} />
       )}
+
+      {/* API provider */}
+        <div className="coin-info"> 
+          <span className="coin-info">
+          Data provided by{" "}
+          <a
+            className="text-coin"
+            href="http://www.coingecko.com"
+            rel="noreferrer"
+            target={"_blank"}
+          >
+            CoinGecko
+          </a>
+        </span>
+      </div>
+    
     </div>
+
+    
   );
 };
 

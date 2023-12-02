@@ -122,3 +122,25 @@ body {
 .text {
   font-size: 1rem; /* Adjust font size as needed */
 }
+
+
+/* api provider */
+
+.text-coin {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Set the default text color */
+  font-weight: 600;
+
+  transition: color 0.3s ease;
+
+  &:hover {
+    text-decoration: none; /* Remove underline on hover */
+    color: black; /* Change text color on hover */
+    font-weight: 900;
+    transform: translateY(-5px) scale(1.2);
+  }
+}
+
+.coin-info {
+  font-weight: 500;
+}
