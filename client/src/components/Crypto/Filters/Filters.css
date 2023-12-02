@@ -1,0 +1,31 @@
+
+.container-filters {
+  margin-top: 2rem;
+}
+
+.filters-container {
+  border: 2px solid #dee2e6;
+  border-radius: 0.5rem; 
+  overflow: hidden;
+  margin: auto;
+  width: 60%;
+  margin-top: 20px;
+  background-color: #343a40;
+  color: white;
+  padding: 10px; 
+}
+
+.sort-label {
+  display: flex;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+
+.sort-label span {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.sort-select {
+  width: 200px; 
+}
