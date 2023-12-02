@@ -7,25 +7,26 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background: rgba(0, 0, 0, 0.5); 
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000; /* Set a higher z-index for the overlay */
+  z-index: 1000; 
 }
-
   
   .overlay:hover {
     cursor: pointer;
   }
 
+  /* Custom Modal */
   .custom-modal {
-    width: 30%;
-    height: 65%;
-    background-color: rgb(33, 37, 41, 0.75); /* Bootstrap bg-gray-300 with 75% opacity */
-    border-radius: 1rem; /* Bootstrap rounded-lg equivalent */
+    margin-top: 5rem;
+    width: 40%;
+    height: 80%;
+    background-color: rgb(33, 37, 41, 0.75); 
+    border-radius: 1rem; 
     color: white;
-    z-index: 1100; /* Set a higher z-index for the modal */
+    z-index: 1100;  
   }
 
   
@@ -74,14 +75,14 @@
   
   .symbol {
     display: inline-block;
-    padding: 0.25rem 1.5rem; /* Adjust padding as needed */
+    padding: 0.25rem 1.5rem;
     margin-top: 0.5rem;
     margin-left: 0.5rem;
     background-color: rgba(20, 255, 236, 0.25);
     color: rgb(20, 255, 236);
     border-radius: 0.25rem;
     text-transform: uppercase;
-    font-size: 0.9rem; /* Adjust font size as needed */
+    font-size: 0.9rem; 
   }
 
   /* Crypto Details PRICE ETC */
@@ -122,25 +123,25 @@
   
   }
   .text-green {
-    color: #28a745 !important; /* Equivalent to Bootstrap's 'text-green' class */
-    font-weight: 500; /* Make the text bold */
+    color: #28a745 !important; 
+    font-weight: 500; 
   }
   
   .text-red {
-    color: #dc3545 !important; /* Equivalent to Bootstrap's 'text-red' class */
-    font-weight: 500; /* Make the text bold */
+    color: #dc3545 !important; 
+    font-weight: 500; 
   }
   
   .fill-green {
-    fill: #28a745 !important; /* Equivalent to Bootstrap's 'fill-green' class */
+    fill: #28a745 !important; 
   }
   
   .fill-red {
-    fill: #dc3545 !important; /* Equivalent to Bootstrap's 'fill-red' class */
+    fill: #dc3545 !important; 
   }
   
   .rotate-180 {
-    transform: rotate(180deg) !important; /* Equivalent to Bootstrap's 'rotate-180' class */
+    transform: rotate(180deg) !important; 
   }
 
   /* Price numbers  */
@@ -165,8 +166,8 @@
   flex-direction: column;
 }
 .fully-diluted{
-  margin-left: 10rem;
   margin-top: -3rem;
+  
 }
 
 /* High Low Prices */
@@ -182,12 +183,13 @@
 .market-data-item {
   display: flex;
   flex-direction: column;
+  
 }
 
 /* Market Supply */
 
 .market-data-item.custom-margin {
-  margin-right: 1.85rem !important;
+  margin-right: 3.85rem !important;
 }
 
 

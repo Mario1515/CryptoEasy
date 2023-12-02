@@ -2,15 +2,12 @@ import React, { useContext, useState, useEffect } from "react";
 import { CryptoContext } from "../../../context/CryptoContext";
 import { NavLink, redirect } from "react-router-dom";
 import "./Table.css"; // Custom styling
-import { testCryptoData } from "../../common/testCryptoData";
 import CryptoDetails from "../CryptoDetails/CryptoDetails";
-
 
 const Table = () => {
 
   const [selectedData, setSelectedData] = useState(null);
   const [isCryptoDetailsVisible, setCryptoDetailsVisible] = useState(false);
-  let cryptoData = testCryptoData();
 
   const handleCryptoClick = (data) => {
     setSelectedData(data);
@@ -22,7 +19,7 @@ const Table = () => {
     setCryptoDetailsVisible(false);
   };
 
-  // let { cryptoData } = useContext(CryptoContext);
+  let { cryptoData, error } = useContext(CryptoContext);
 
   return (
     <div className="table-frame">
@@ -93,16 +90,26 @@ const Table = () => {
                   {Number(data.price_change_percentage_7d_in_currency).toFixed(2)}
                 </td>
               </tr>
-
             ))}
           </tbody>
         </table>
-      ) : null}
+
+      )  : (!error.data && !error.search) ? (
+
+        <div className="cool-box">
+        <div className="container-spinner">
+        <div className="spinner spinner-border text-cyan" role="status">
+          <span className="visually-hidden"></span>
+        </div>
+        <span className="text text-base ms-2">Please wait...</span>
+      </div>
+      </div>
+
+      ) : null }
 
           {isCryptoDetailsVisible && (
         <CryptoDetails data={selectedData} onClose={closeCryptoDetails} />
       )}
-
     </div>
   );
 };

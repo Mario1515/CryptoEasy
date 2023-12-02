@@ -88,6 +88,7 @@
     padding-top: 25px;
     padding-bottom: 25px;
     border-top: 1px solid rgba(256, 256, 256, .1);
+    margin-left: -5rem;
 }
 
 .footer .copyright p {

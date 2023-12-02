@@ -97,3 +97,28 @@
 body {
   background-color: #00FFFF; /* Set your desired background color */
 }
+
+
+/* Spinner */
+
+.cool-box {
+  border: 2px solid #343a40; /* Border color */
+  padding: 20px; /* Adjust padding as needed */
+  border-radius: 10px; /* Adjust border radius for rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow */
+}
+
+.container-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+}
+
+.spinner {
+  margin-right: 8px; /* Adjust margin as needed */
+}
+
+.text {
+  font-size: 1rem; /* Adjust font size as needed */
+}

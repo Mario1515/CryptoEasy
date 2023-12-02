@@ -1,7 +1,9 @@
 import React from 'react'
 import Table from "../Table/Table";
-import Filters from '../Search/Filters';
+import Filters from '../Filters/Filters';
 import SinglePageHead from '../../SinglePageHead/SingePageHead';
+import Pagination from "../Pagination/Pagination";
+import Search from '../Search/Search';
 
 const Crypto = () => {
   return (
@@ -12,7 +14,9 @@ const Crypto = () => {
       </div>
       <SinglePageHead pageInfo={{name:'Crypto Prices', slug:'crypto' }} />
       <Filters />
+      <Search />
       <Table />
+     <Pagination />
     </section>
   );
 };

@@ -12,7 +12,7 @@ const CryptoDetails = ({ data, onClose }) => {
   useEffect(() => {
     if (data && !dataLoaded) {
       getCoinData(data.id);
-      setDataLoaded(true); // Set a flag to avoid repeated calls
+      setDataLoaded(true); // Flag to avoit repeated calls
     }
   }, [data, getCoinData, dataLoaded]);
 
@@ -22,6 +22,7 @@ const CryptoDetails = ({ data, onClose }) => {
 
   console.log(data);
     return (
+
         // Structure and background
         <div className="overlay" onClick={close}>
             <div className="custom-modal" onClick={(e) => e.stopPropagation()}>
@@ -192,7 +193,6 @@ const CryptoDetails = ({ data, onClose }) => {
                         </div>
                     </div>
                 ) : null}
-
 
             </div>
         </div>

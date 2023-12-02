@@ -1,14 +1,15 @@
-// Search.jsx
 import debounce from "lodash.debounce";
 import React, { useContext, useState } from "react";
-import searchIcon from "../../../assets/search-icon.svg";
 import { CryptoContext } from "../../../context/CryptoContext";
+import searchIcon from "../../../assets/search-icon.svg";
+import "./Search.css"; // Import the CSS file
 
 const SearchInput = ({ handleSearch }) => {
   const [searchText, setSearchText] = useState("");
   const { searchData, setCoinSearch, setSearchData } = useContext(CryptoContext);
 
   const handleInput = (e) => {
+    e.preventDefault();
     const query = e.target.value;
     setSearchText(query);
     handleSearch(query);
@@ -26,44 +27,47 @@ const SearchInput = ({ handleSearch }) => {
   };
 
   return (
-    <form
-      className="d-flex align-items-center mb-1"
-      onSubmit={handleSubmit}
-    >
-      <input
-        type="text"
-        name="search"
-        onChange={handleInput}
-        value={searchText}
-        className="form-control me-2"
-        placeholder="Search here..."
-      />
-      <button
-        type="submit"
-        className="btn btn-outline-secondary"
-      >
-        <img src={searchIcon} alt="search" />
-      </button>
+    <>
+    <div className="search-container-wrapper"> 
+      <form className="form-container" onSubmit={handleSubmit}>
+        <div className="search-container">
+          <input
+            type="text"
+            name="search"
+            onChange={handleInput}
+            value={searchText}
+            className="form-input"
+            placeholder="search here..."
+          />
+          <button type="submit" className="form-button">
+            <img src={searchIcon} className="w-100 h-auto" alt="search" />
+          </button>
+        </div>
+      </form>
 
-      {searchText.length > 0 && searchData && (
-        <ul className="list-group position-absolute w-100 mt-1">
-          {searchData.map((coin) => (
-            <li
-              className="list-group-item d-flex align-items-center cursor-pointer"
-              key={coin.id}
-              onClick={() => selectCoin(coin.id)}
-            >
-              <img
-                className="w-2 h-2 me-2"
-                src={coin.thumb}
-                alt={coin.name}
-              />
-              <span>{coin.name}</span>
-            </li>
-          ))}
+      {searchText.length > 0 && (
+        <ul className="results-list">
+          {searchData ? (
+            searchData.map((coin) => (
+              <li
+                className="d-flex align-items-center ml-4 my-2 cursor-pointer"
+                key={coin.id}
+                onClick={() => selectCoin(coin.id)}
+              >
+                <img className="w-1rem h-1rem mx-1.5" src={coin.thumb} alt={coin.name} />
+                <span>{coin.name}</span>
+              </li>
+            ))
+          ) : (
+            <div className="loading-container">
+              <div className="loading-spinner" role="status" />
+              <span className="ml-2">Searching...</span>
+            </div>
+          )}
         </ul>
       )}
-    </form>
+      </div>
+    </>
   );
 };
 
@@ -75,7 +79,7 @@ const Search = () => {
   }, 2000);
 
   return (
-    <div className="position-relative">
+    <div className="relative">
       <SearchInput handleSearch={debounceFunc} />
     </div>
   );
