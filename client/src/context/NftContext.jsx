@@ -30,6 +30,7 @@ const nftReducer = (state, action) => {
                     username: action.username,
                     text: action.payload,
                     timestamp: action.timestamp,
+                    image: action.image
                     },
                   ],
                 }
@@ -77,7 +78,7 @@ export const NftProvider = ({
             type: 'FETCH_NFT_DETAILS',
             payload: {
               ...nftDetails,
-              comments: nftComments.map(x => ({ username: x.user.username, text: x.text, timestamp: x.timestamp })),
+              comments: nftComments.map(x => ({ username: x.user.username, text: x.text, timestamp: x.timestamp, image: x.image })),
             },
             nftId,
           });
@@ -93,6 +94,7 @@ export const NftProvider = ({
           nftId,
           username: comment.username,
           timestamp: comment.timestamp,
+          image: comment.image
         });
       };
 

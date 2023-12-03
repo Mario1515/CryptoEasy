@@ -22,21 +22,21 @@ const CommentsSection = ({ currentNft, addComment }) => {
 
     const comment = formData.get("comment");
     const currentTime = timeNow();
+    const image = user.imageUrl;
 
     try {
 
-      addComment(currentNft._id, { username: user.username, text: comment, timestamp: currentTime });
+      addComment(currentNft._id, { username: user.username, text: comment, timestamp: currentTime, image: image });
 
-      await commentService.create(currentNft._id, comment, currentTime);
+      await commentService.create(currentNft._id, comment, currentTime, image);
 
-      console.log(currentTime);
       
       const nftDetails = await nftService.getOne(currentNft._id);
       const nftComments = await commentService.getNftById(currentNft._id);
 
       fetchNftDetails(currentNft._id, {
         ...nftDetails,
-        comments: nftComments.map(x => `user: ${x.user.username} / text: "${x.text}" / timestamp: ${x.timestamp}`),
+        comments: nftComments.map(x => `user: ${x.user.username} / text: "${x.text}" / timestamp: ${x.timestamp} / image: ${x.image}`),
     });
     } catch (err) {
 
@@ -99,7 +99,7 @@ const CommentsSection = ({ currentNft, addComment }) => {
                           <li key={index} className="comment">
                             <div className="media-body d-flex align-items-center">
                               <img
-                                src="https://img.icons8.com/bubbles/100/000000/couple-icloud.png"
+                                src={comment.image}
                                 className="align-self-start mr-3 rounded-circle"
                                 alt=""
                                 style={{ width: '60px', height: '60px' }}
