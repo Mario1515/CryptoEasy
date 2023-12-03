@@ -1,18 +1,18 @@
 .text-coin {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Set the default text color */
+    text-decoration: none; 
+    color: inherit; 
   
     transition: color 0.3s ease;
   
     &:hover {
-      text-decoration: none; /* Remove underline on hover */
-      color: black; /* Change text color on hover */
+      text-decoration: none; 
+      color: black; 
       transform: translateY(-5px) scale(1.2);
     }
   }
 
   .carousel-caption > h3 {
-    /* Your styles for h3 elements inside Carousel.Caption go here */
-    color: #00FFFF; /* Example color, adjust as needed */
-    font-size: 50px; /* Example font size, adjust as needed */
+
+    color: #00FFFF; 
+    font-size: 50px; 
   }

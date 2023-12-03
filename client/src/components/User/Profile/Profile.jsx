@@ -4,7 +4,9 @@ import { AuthContext } from "../../../context/AuthContext";
 import { useEffect, useContext, useState } from "react";
 import SinglePageHead from "../../SinglePageHead/SingePageHead";
 import CreatorCard from "../../Creator/CreatorCard/CreatorCard";
+import { NavLink } from "react-router-dom";
 import "./Profile.css";
+
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
@@ -59,15 +61,16 @@ const Profile = () => {
                         <h6 className="text-muted f-w-400">{userData.country}</h6>
                       </div>
                     </div>
-                    <h6 className="m-b-20 m-t-40 p-b-5 b-b-default f-w-600">Projects</h6>
+                    <h6 className="m-b-20 m-t-40 p-b-5 b-b-default f-w-600"></h6>
                     <div className="row">
                       <div className="col-sm-6">
                         <p className="m-b-10 f-w-600">Full Name</p>
                         <h6 className="text-muted f-w-400">{userData.first_name} {userData.last_name}</h6>
                       </div>
                       <div className="col-sm-6">
-                        <p className="m-b-10 f-w-600">Most Viewed</p>
-                        <h6 className="text-muted f-w-400">Dinoter husainm</h6>
+                        <p className="m-b-10 f-w-600">Need to update info?</p>
+                        
+                        <NavLink className="text-muted f-w-400 btn" to="/contact">Contact Us</NavLink>
                       </div>
                     </div>
                     <ul className="social-link list-unstyled m-t-40 m-b-10">

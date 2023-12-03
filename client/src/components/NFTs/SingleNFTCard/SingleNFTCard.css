@@ -1,16 +1,17 @@
 .class-wrap {
-    background-color: #35bcbf; /* Set your desired background color */
-    padding: 7px; /* Adjust padding as needed */
-    border-radius: 8px; /* Add border-radius for rounded corners */
+    background-color: #35bcbf; 
+    padding: 7px; 
+    border-radius: 8px;
     transition: transform 0.3s ease-in-out;
-    text-decoration: none;
+    text-decoration: none !important;
 
-    border: 4px solid #343a40; /* Set your desired border color */
-    border-style: /* Set your desired border style (dashed, solid, etc.) */
+    border: 4px solid #343a40; 
+    border-style:
   }
   
   .class-text {
-    border: 3px solid #343a40; /* Set your desired border color */  
+    border: 3px solid #343a40;   
+    text-decoration: none !important;
 
 }
 
@@ -21,7 +22,7 @@
     transition: transform 0.3s ease-in-out;
     text-decoration: none;
     
-    /* ... other styles */
+    
   }
 
   .class-img img {
@@ -33,7 +34,7 @@
 
 .class-wrap:hover {
   transform: scale(1.);
-  border: 2x solid #35bcbf; /* Adjust border color */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a shadow */
-  text-decoration: none;
+  border: 2x solid #35bcbf; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+  text-decoration: none !important
 }

@@ -132,7 +132,17 @@ p {
 }
 
 .move-right {
-    margin-left: 440px; /* This will move the card to the right */
-    padding: 10px; /* Adjust the padding as needed */
+    margin-left: 440px; 
+    padding: 10px; 
   }
 
+
+.text-muted.btn{
+    margin-left: -0.5rem;
+    transition: color 0.3s ease;
+  
+    &:hover {
+      
+      color: black !important; /* Change text color on hover */
+    }
+}

@@ -68,7 +68,7 @@ const AllNFTs = () => {
 		<>
 		<SinglePageHead pageInfo={{name:'NFTs', slug:'allnfts' }} />
 		<div className="about wow fadeInUp" data-wow-delay="0.1s">
-            <div className="container">
+            <div className="container custom" >
                 <div className="row align-items-center">
                     <div className="col-lg-5 col-md-7">
                         <div className="nft-img">
@@ -87,7 +87,7 @@ const AllNFTs = () => {
                             <p>
 							Unleash the power of your creativity by crafting your first Non-Fungible Token (NFT) with us or check out other creator's digital art! Join the NFT wave today, and witness your creativity unfold in the esteemed realm of digital ownership.
                             </p>
-                            <Link className="btn" to="/creators">Meet the Creators</Link>
+                            <a className="btn learn" href="https://www.investopedia.com/non-fungible-tokens-nft-5115211" target="_blank" rel="noopener noreferrer">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@ const AllNFTs = () => {
 		 <div className="class" style={{marginTop: '100px'}}>
             <div className="container">
                 <div className="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p>Our NFTs</p>
+                    <p>NFTs</p>
                     <h2>NFTs created on our platform</h2>
                 </div>
                 <div className="row">
@@ -118,7 +118,9 @@ const AllNFTs = () => {
 
 			 </div> )
 			 : 
-			 <h4 className="no-NFTs-found">No NFTs found.</h4>} 
+			 <h4 className="no-NFTs-found">No NFTs found.</h4> 
+             
+                }
 
             </div>
         </div>
