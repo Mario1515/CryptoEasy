@@ -2,8 +2,8 @@ import * as request from "./requester";
 
 const baseUrl = 'http://localhost:3030/data/comments';
 
-export const create = (nftId, comment) =>
-    request.post(baseUrl, { nftId, text: comment });
+export const create = (nftId, comment, currentTime) =>
+    request.post(baseUrl, { nftId, text: comment, timestamp: currentTime });
 
 
 export const getNftById = (nftId) => {

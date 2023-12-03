@@ -12,7 +12,7 @@ import "./CommentsSection.css";
 
 const CommentsSection = ({ currentNft, addComment }) => {
   const { fetchNftDetails } = useContext(NftContext);
-  const currentTime = timeNow();
+  
   const { user, isAuthenticated } = useContext(AuthContext);
 
   // Comment Func
@@ -21,18 +21,23 @@ const CommentsSection = ({ currentNft, addComment }) => {
     const formData = new FormData(e.target);
 
     const comment = formData.get("comment");
-
+    const currentTime = timeNow();
 
     try {
-      addComment(currentNft._id, comment);
 
-      await commentService.create(currentNft._id, comment);
+      addComment(currentNft._id, { username: user.username, text: comment, timestamp: currentTime });
 
+      await commentService.create(currentNft._id, comment, currentTime);
+
+      console.log(currentTime);
+      
       const nftDetails = await nftService.getOne(currentNft._id);
       const nftComments = await commentService.getNftById(currentNft._id);
 
-      fetchNftDetails(currentNft._id, { ...nftDetails, comments: nftComments.map(x => `${x.user.username}: ${x.text}`) });
-
+      fetchNftDetails(currentNft._id, {
+        ...nftDetails,
+        comments: nftComments.map(x => `user: ${x.user.username} / text: "${x.text}" / timestamp: ${x.timestamp}`),
+    });
     } catch (err) {
 
       console.log(`There was an error submitting the comment: ${err}`);
@@ -85,15 +90,11 @@ const CommentsSection = ({ currentNft, addComment }) => {
           <div className="row">
             <div className="col-md-12">
               <ul className="list-unstyled">
+
+                {console.log(currentNft.comments)}
                 {currentNft.comments?.length > 0 ? (
                   currentNft.comments.map((comment, index) => {
-                    const parts = comment.split(':');
-
-                    if (parts.length === 2) {
-                      const username = parts[0].trim();
-                      const text = parts[1].trim();
-
-                      if (username && text) {
+                  
                         return (
                           <li key={index} className="comment">
                             <div className="media-body d-flex align-items-center">
@@ -105,19 +106,16 @@ const CommentsSection = ({ currentNft, addComment }) => {
                               />
                               <div className="media-body">
                                 <div className="row d-flex align-items-center">
-                                  <h6 className="user pt-2">{username}</h6>
+                                  <h6 className="user pt-2">{comment.username}</h6>
                                   <div className="ml-auto" style={{ marginRight: '40px', marginTop: '1px' }}>
-                                    <p className="text">{currentTime}</p>
+                                  <p className="text">{comment.timestamp}</p>
                                   </div>
                                 </div>
-                                <p className="text">{text}</p>
+                                <p className="text">{comment.text}</p>
                               </div>
                             </div>
                           </li>
                         );
-                      }
-                    }
-                    return null;
                   })
                 ) : (
                   <p className="no-comment">No comments.</p>
@@ -132,7 +130,3 @@ const CommentsSection = ({ currentNft, addComment }) => {
 };
 
 export default CommentsSection;
-
-
-
-
