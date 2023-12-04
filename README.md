@@ -55,4 +55,12 @@ This part of the platform is designed for non-registered users. These users have
 * **HTML + CSS Free template from Theme Forest | BootStrap CSS** 
 * **EmailJS**
 
+## Installation 
+
+### Follow these simple steps to get the project up and running on your local machine.
+
+* Clone the repository on your local machine
+* (Frontend) Open the folder Client in your terminal and write `npm i` to install all dependencies, afterwards write `npm run dev` to start frontend server on http://localhost:5173/
+* (Backend) Open the folder Server in your terminal and write `npm i` to install all dependencies, afterwards write `node server` to start the backend server on http://localhost:3030/
+* You are all set! Go to http://localhost:5173/ and review the project. 😊
 
