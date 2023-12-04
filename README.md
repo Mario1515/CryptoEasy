@@ -12,9 +12,16 @@ The primary vision behind Crypto Easy React is to create an intuitive and user-f
 
 The project serves a dual purpose: to provide valuable hands-on experience for developers diving into React.js and to deliver a feature-rich platform for users keen on navigating the cryptocurrency and NFT space. Whether you're a seasoned investor or a creative individual looking to showcase your unique digital creations, Crypto Easy React aims to cater to your needs.
 
+![image](https://github.com/Mario1515/CryptoEasy/assets/126467500/38558e3f-2880-475d-8ded-c2eb6da80481)
+
 ### Unique Features:
 
 With a focus on both public and private user experiences, Crypto Easy React offers a range of features. Non-registered users can explore trending crypto prices, view NFTs, and even contact the admin team through a user-friendly email form. For registered users, the platform opens up a world of possibilities, allowing them to manage profiles, create, edit, and delete their own NFTs, providing a comprehensive and personalized experience.
+
+![image](https://github.com/Mario1515/CryptoEasy/assets/126467500/ff99bf9b-acc3-4f23-8d25-b37661e6606a)
+
+![image](https://github.com/Mario1515/CryptoEasy/assets/126467500/636e415e-9c64-4ba2-b116-72c49512aef3)
+
 
 ### Public Part:
 - **Home Page:** A vibrant dashboard providing information on the platform and showcasing trending Crypto prices, accessible to all users.
