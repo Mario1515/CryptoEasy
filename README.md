@@ -2,65 +2,68 @@
 
 ## About The Project - Non-technical Description
 
-This [project](https://github.com/Mario1515/CryptoEasy/) was created by [Mario Petkov](https://github.com/Mario1515) for the purposes of React. js Softuni Course, Nov'23.
+Crypto Easy React Project is a product of Mario Petkov, a passionate developer dedicated to exploring the vast landscape of React.js. This innovative project was conceived as part of the React.js Softuni Course.
 
+### Project Vision:
 
-## Public part
+The primary vision behind Crypto Easy React is to create an intuitive and user-friendly platform that seamlessly integrates the power of React.js with the dynamic world of cryptocurrencies and NFTs. 
 
-This part of the platform is designed for non-registered users. These users have access to the following:
+### Purpose:
 
-* **Home page** ->
-  Main dashboard page in which all users can find information about the platform and view trending Crypto prices.
+The project serves a dual purpose: to provide valuable hands-on experience for developers diving into React.js and to deliver a feature-rich platform for users keen on navigating the cryptocurrency and NFT space. Whether you're a seasoned investor or a creative individual looking to showcase your unique digital creations, Crypto Easy React aims to cater to your needs.
 
-* **Crypto Page** ->
-  Crypto Page in which all users can view live crypto data provided by CoinGecko Api and use search/filter function for all crypto.
+### Unique Features:
 
-* **NFT Page** ->
-  NFT Page in which all users can view NFTs created by registered users.
+With a focus on both public and private user experiences, Crypto Easy React offers a range of features. Non-registered users can explore trending crypto prices, view NFTs, and even contact the admin team through a user-friendly email form. For registered users, the platform opens up a world of possibilities, allowing them to manage profiles, create, edit, and delete their own NFTs, providing a comprehensive and personalized experience.
 
-* **NFT Details page** ->
-  A page offering more detailed information about NFTs such as: description, price, comments (only to logged in users), etc.
+### Public Part:
+- **Home Page:** A vibrant dashboard providing information on the platform and showcasing trending Crypto prices, accessible to all users.
 
-* **Contact** ->
-  A contact us page in which all users could contact the admin team via a fully-working email form.
+- **Crypto Page:** Dive into the world of cryptocurrencies! Explore live data from the CoinGecko API, complete with a handy search/filter function for all things crypto.
 
-* **Login** ->
-  A page where the login form for already registered users is located.
+- **NFT Page:** Discover the creativity of registered users through the NFT Page, where unique digital assets are on display.
 
-* **Register** ->
-  A page where the register form for non-users is located.
+- **NFT Details Page:** Delve deeper into the NFT realm with detailed information on each piece, including description, price, and user comments (exclusive to logged-in users).
 
- ## Private part
+- **Contact:** Reach out to the admin team effortlessly through a fully-functional email form.
 
-* **Profile** ->
-   A page in which every registered user can view information about his profile (image, jurisdiction etc.)
-  
-* **Create** ->
-  A page where every registered user could create their NFT (description, image, name etc.)
-  
-* **Edit** ->
-  A page with a form for modification of a particularly selected NFT (available only to creator)
-  
-* **Delete** ->
-  A delete functionality to remove a particularly selected NFT (available only to creator)
+- **Login:** For registered users, a dedicated login page awaits.
 
-## Technical Description
+- **Register:** New to the platform? Register quickly and easily on this page.
 
-### The project was built using:
+### Private Part:
+- **Profile:** Every registered user gets a personalized space to view and manage their profile details, including an image and jurisdiction information.
 
-* **React.JS**
-* **Vite (Frontend Build Development Server)**
-* **Backened (NodeJS Softuni Server)**
-* **CoinGecko API** 
-* **HTML + CSS Free template from Theme Forest | BootStrap CSS** 
-* **EmailJS**
+- **Create:** Unleash your creativity! Registered users can create their own NFTs by providing descriptions, images, names, and more.
 
-## Installation 
+- **Edit:** For creators only! Modify the details of a selected NFT with the exclusive editing feature.
 
-### Follow these simple steps to get the project up and running on your local machine.
+- **Delete:** Another creator-exclusive functionality, allowing the removal of a selected NFT.
 
-* Clone the repository on your local machine
-* (Frontend) Open the folder Client in your terminal and write `npm i` to install all dependencies, afterwards write `npm run dev` to start frontend server on http://localhost:5173/
-* (Backend) Open the folder Server in your terminal and write `npm i` to install all dependencies, afterwards write `node server` to start the backend server on http://localhost:3030/
-* You are all set! Go to http://localhost:5173/ and review the project. 😊
+## Technical Description:
 
+The project is constructed with the following technologies:
+- React.js
+- Vite (Frontend Build Development Server)
+- Backend (NodeJS Softuni Server)
+- CoinGecko API
+- HTML + CSS (Free template from Theme Forest | Bootstrap CSS)
+- EmailJS
+
+## Installation:
+
+Getting started is a breeze:
+1. Clone the repository to your local machine.
+2. **Frontend:**
+    - Navigate to the "Client" folder in your terminal.
+    - Run `npm i` to install dependencies.
+    - Execute `npm run dev` to start the frontend server on http://localhost:5173/.
+3. **Backend:**
+    - Head to the "Server" folder in your terminal.
+    - Run `npm i` to install dependencies.
+    - Launch the backend server with `node server` on http://localhost:3030/.
+4. Voila! Visit http://localhost:5173/ to explore the project. 😊
+
+## CoinGecko API 
+
+This project is using CoinGecko free API which is restricted to only 10 requested per minute, therefore if the Crypto Page is slow and taking some time to load please keep this in mind. Refresh and try again later. Thank you for the understanding. 
