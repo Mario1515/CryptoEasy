@@ -44,3 +44,15 @@ This part of the platform is designed for non-registered users. These users have
 * **Delete** ->
   A delete functionality to remove a particularly selected NFT (available only to creator)
 
+## Technical Description
+
+### The project was built using:
+
+* **React.JS**
+* **Vite (Frontend Build Development Server)**
+* **Backened (NodeJS Softuni Server)**
+* **CoinGecko API** 
+* **HTML + CSS Free template from Theme Forest | BootStrap CSS** 
+* **EmailJS**
+
+
