@@ -1,9 +1,12 @@
 import { Route, Routes } from "react-router-dom";
+
+import { CryptoProvider } from "./context/CryptoContext";
+import { AuthProvider } from "./context/AuthContext";
+import { NftProvider } from "./context/NftContext";
+
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import Crypto from "./components/Crypto/Crypto/Crypto";
-import { CryptoProvider } from "./context/CryptoContext";
-import { AuthProvider } from "./context/AuthContext";
 import Register from "./components/User/Register/Register";
 import Login from "./components/User/Login/Login";
 import Footer from "./components/Footer/Footer";
@@ -13,7 +16,6 @@ import AllNFTs from "./components/NFTs/AllNfts/AllNFTs";
 import CreateNft from "./components/NFTs/CreateNft/CreateNft.jsx";
 import NFTDetails from "./components/NFTs/NftDetails/NFTDetails"
 import PrivateRoute from "./components/common/PrivateRoute";
-import { NftProvider } from "./context/NftContext";
 import EditNft from "./components/NFTs/EditNft/EditNft";
 import Contact from "./components/Contact/Contact.jsx";
 import Profile from "./components/User/Profile/Profile.jsx";
