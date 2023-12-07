@@ -49,7 +49,7 @@
     padding-right: 0.5rem;
   }
   
-  .image-container {
+  .image-container.custom{
     display: flex;
     align-items: center;
     width: 100%;
@@ -57,9 +57,11 @@
     padding-top: 1rem;
   }
   
-  .image {
-    width: 3rem;
-    height: 3rem;
+  .image.custom{
+    width: 3rem !important; 
+    height: 3rem !important;
+    margin-left: 1rem !important;
+    margin-top: 1rem  !important;
   }
   
   .title {
@@ -189,7 +191,7 @@
 /* Market Supply */
 
 .market-data-item.custom-margin {
-  margin-right: 3.85rem !important;
+  margin-right: 6rem !important;
 }
 
 
@@ -198,5 +200,5 @@
 
 
 .market-data-item.custom-margin1{
-margin-left: 5rem;
+margin-right: 1rem;
 }

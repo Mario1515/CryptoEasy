@@ -76,7 +76,7 @@ const Table = () => {
                     currency: "usd",
                   }).format(data.current_price)}
                 </td>
-                <td className="align-middle">{data.total_volume}</td>
+                <td className="align-middle">${data.total_volume}</td>
                 <td className="align-middle">
                   {data.market_cap_change_percentage_24h}%
                 </td>

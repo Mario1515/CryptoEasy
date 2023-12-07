@@ -32,8 +32,8 @@ const CryptoDetails = ({ data, onClose }) => {
     {data ? (
         <div className="flex-container">
             <div className="column-container">
-                <div className="image-container">
-                    <img className="image" src={data.image} alt={data.id} />
+                <div className="image-container custom">
+                    <img className="image custom" src={data.image} alt={data.id} />
                     <h1 className="title">{data.name}</h1>
                     <span className="symbol">{data.symbol}</span>
                 </div>  
@@ -48,7 +48,7 @@ const CryptoDetails = ({ data, onClose }) => {
                             </span>
                             {/* Price changes % */}
                             <div
-                                className={`bg-opacity-25 float-right ${data.price_change_percentage_24h > 0
+                                className={`bg-opacity-25 float-right  ${data.price_change_percentage_24h > 0
                                         ? "bg-green text-green"
                                         : "bg-red text-red"
                                     } `}
