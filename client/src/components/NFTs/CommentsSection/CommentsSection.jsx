@@ -91,7 +91,6 @@ const CommentsSection = ({ currentNft, addComment }) => {
             <div className="col-md-12">
               <ul className="list-unstyled">
 
-                {console.log(currentNft.comments)}
                 {currentNft.comments?.length > 0 ? (
                   currentNft.comments.map((comment, index) => {
                   

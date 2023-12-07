@@ -14,11 +14,11 @@ const TrendingCrypto = ({ crypto }) => {
             </div>
             {/* Card */}
 
-            <div class="card-title">
+            <div className="card-title">
               <h1>${new Intl.NumberFormat("en-IN", {
                 maximumSignificantDigits: 5,
               }).format(crypto.current_price)}
-                <div class="scroller">
+                <div className="scroller">
                   <span>
                     <br />
                     {(crypto.symbol).toUpperCase()} <br />

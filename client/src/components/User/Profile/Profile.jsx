@@ -26,7 +26,6 @@ const Profile = () => {
     getUser();
   }, [user.accessToken]);
 
-  console.log(userData);
 
   return (
     <>

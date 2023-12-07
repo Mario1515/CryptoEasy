@@ -19,8 +19,7 @@ const CryptoDetails = ({ data, onClose }) => {
   const close = () => {
     onClose();
   };
-
-  console.log(data);
+  
     return (
 
         // Structure and background
