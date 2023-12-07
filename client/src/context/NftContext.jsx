@@ -71,8 +71,6 @@ export const NftProvider = ({
         try {
           const nftDetails = await nftService.getOne(nftId);
           const nftComments = await commentService.getNftById(nftId);
-
-          console.log(`this is nft comments ${JSON.stringify(nftComments)}`);
       
           dispatch({
             type: 'FETCH_NFT_DETAILS',
