@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom';
-import './Hero.css';
 import hero from '../../assets/hero.avif';
-import TrendingCrypto from "../../components/Crypto/TrendingCrypto/TrendingCrypto";
 import Carroussel from '../Crypto/Carrousel/Carroussel';
+
+import './Hero.css';
 
 const Hero = () => {
   return (

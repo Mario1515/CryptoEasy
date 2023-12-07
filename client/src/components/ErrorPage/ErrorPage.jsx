@@ -1,5 +1,7 @@
 import SinglePageHead from "../SinglePageHead/SingePageHead"
 import { NavLink } from 'react-router-dom';
+import errorimage from "../../assets/404.png"
+
 import "./ErrorPage.css"
 
 const ErrorPage = () => {
@@ -16,7 +18,7 @@ const ErrorPage = () => {
                         </div >
                         <div className="about-text error">
                         <div className="about-img">
-                            <img src="./img/404.png" alt="Error Image" style={{width: '60%'}} />
+                            <img src={errorimage} alt="Error Image" style={{width: '60%'}} />
                    		 </div>
                             <NavLink className="btn" to="/">Back to Website</NavLink>
                         </div>

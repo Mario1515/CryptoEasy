@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useState, useEffect} from "react";
 import * as nftService from "../../../services/nftService";
 import SingleNFTCard from "../SingleNftCard/SingleNFTCard";
+import nftImage from "../../../assets/nft.png";
 
 
 import './AllNFTs.css'
@@ -72,7 +73,7 @@ const AllNFTs = () => {
                 <div className="row align-items-center">
                     <div className="col-lg-5 col-md-7">
                         <div className="nft-img">
-                            <img src="./img/nft.png" alt="NFT Image" />
+                            <img src={nftImage} alt="NFT Image" />
                         </div>
                     </div>
                     <div className="col-lg-7 col-md-6">

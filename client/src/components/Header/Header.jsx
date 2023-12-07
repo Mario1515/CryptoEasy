@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import logoSvg from "../../assets/logo.svg";
 import { useAuthContext } from "../../context/AuthContext";
 
-import "./Header.css"; // Custom styling
+import "./Header.css"; 
 
 const Header = () => {
   const { user, isAuthenticated } = useAuthContext();
