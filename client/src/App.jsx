@@ -14,13 +14,9 @@ import CreateNft from "./components/NFTs/CreateNft/CreateNft.jsx";
 import NFTDetails from "./components/NFTs/NftDetails/NFTDetails"
 import PrivateRoute from "./components/common/PrivateRoute";
 import { NftProvider } from "./context/NftContext";
-import NftOwner from "./components/common/NftOwner";
 import EditNft from "./components/NFTs/EditNft/EditNft";
 import Contact from "./components/Contact/Contact.jsx";
 import Profile from "./components/User/Profile/Profile.jsx";
-import CryptoDetails from "./components/Crypto/CryptoDetails/CryptoDetails.jsx";
-import ScrollToTop from "./hooks/ScrollToTop.js";
-
 
 const App = () => {
   return (
@@ -32,7 +28,6 @@ const App = () => {
             <Routes>
               <Route path="/" exact element={<Hero />} />
               <Route path="/crypto" element={<Crypto />} />
-              {/* <Route path="crypto/:coinId" element={<CryptoDetails />} /> */}
               <Route path="/register" exact element={<Register />} />
               <Route path="/login" exact element={<Login />} />
               <Route path="/logout" exact element={<Logout />} />
@@ -43,8 +38,16 @@ const App = () => {
                   <CreateNft />
                 </PrivateRoute>
               )} />
-              <Route path="/edit/:nftId/edit" exact element={<EditNft />} />
-              <Route path="/profile" exact element={<Profile />} />
+              <Route path="/edit/:nftId/edit" element={(
+                <PrivateRoute>
+                  <EditNft />
+                </PrivateRoute>
+              )} />
+              <Route path="/profile" element={(
+                <PrivateRoute>
+                  <Profile />
+                </PrivateRoute>
+              )} />
               <Route path="/contact" exact element={<Contact />} />
               <Route path="*" exact element={<ErrorPage />} />
             </Routes>

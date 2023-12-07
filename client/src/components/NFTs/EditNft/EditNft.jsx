@@ -5,6 +5,7 @@ import * as nftService from "../../../services/nftService";
 import { NftContext } from "../../../context/NftContext";
 import Notification from "../../User/Notication/Notification";
 import { validateNftData } from "../../common/validateNft";
+import { AuthContext } from "../../../context/AuthContext";
 
 const EditNft = () => {
 
@@ -33,6 +34,11 @@ const EditNft = () => {
     });
   }, []);
 
+  //checking if user === owner
+  const { user } = useContext(AuthContext);
+  user._id !== currentNft._ownerId ? navigate("/login") : null;
+
+  //submit logic
   const onSubmit = async (e) => {
     e.preventDefault();
 
