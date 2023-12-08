@@ -2,7 +2,6 @@ import { createContext, useLayoutEffect, useState } from "react";
 
 export const CryptoContext = createContext({});
 
-//Crypto Provider component
 export const CryptoProvider = ({ children }) => {
   const [cryptoData, setCryptoData] = useState();
   const [searchData, setSearchData] = useState();

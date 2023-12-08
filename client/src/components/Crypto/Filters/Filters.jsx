@@ -1,6 +1,7 @@
 import React, { useContext, useRef } from "react";
-
+import Search from "../Search/Search";
 import { CryptoContext } from "../../../context/CryptoContext";
+
 import "./Filters.css"; 
 
 const Filters = () => {

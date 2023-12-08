@@ -15,8 +15,6 @@ const NftOwner = ({ children }) => {
     const currentNft = selectNft(nftId);
 
     if (user._id !== currentNft._ownerId) {
-
-
         return <Navigate to='/allnfts' replace />
     }
 

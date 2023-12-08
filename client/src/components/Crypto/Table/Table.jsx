@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import { CryptoContext } from "../../../context/CryptoContext"; 
 import CryptoDetails from "../CryptoDetails/CryptoDetails";
 
-import "./Table.css"; // Custom styling
+import "./Table.css"; 
 
 const Table = () => {
 
