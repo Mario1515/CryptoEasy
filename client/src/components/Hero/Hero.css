@@ -4,7 +4,7 @@
     padding: 90px 0;
     background: #00FFFF;
     overflow: hidden;
-    margin-top: 130px; /* Adjust the value to set the desired distance from the top */
+    margin-top: 130px; 
 }
 
 .hero .container-fluid {
@@ -14,7 +14,7 @@
 .hero .hero-image {
     position: relative;
     text-align: right;
-    margin-top: -300px; /* Adjust the value to move the image higher */
+    margin-top: -300px; 
 }
 
 .hero .hero-image img {

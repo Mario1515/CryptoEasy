@@ -10,10 +10,10 @@
 }
 
 .single-content img {
-    max-width: 70%; /* Set the maximum width to 100% of the container */
-    max-height: 450px; /* Maintain the aspect ratio */
-    display: block; /* Remove any default inline styling */
-    margin: auto; /* Center the image */
+    max-width: 70%; 
+    max-height: 450px; 
+    display: block; 
+    margin: auto; 
     margin-left: 60px;
     margin-top: 40px;
     border-radius: 10px;
@@ -31,7 +31,7 @@
 /* NFT DETAILS */
 
 .nft-details {
-  /* Your styles for the whole div here */
+
   width: 71%;
   padding: 10px;
   margin-bottom: 20px;
@@ -107,12 +107,12 @@
   color:#ccc;
   font-weight: 500;
   text-shadow: 1px 0px 5px rgba(0,0,0,0.42);
-  word-break: break-all; /* Break words when needed to prevent overflow */
+  word-break: break-all; 
 }
 
   .nft-details .category-widget {
     display: flex;
-    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+    flex-wrap: wrap; 
   }
   
   .nft-details .category-widget ul {
@@ -125,16 +125,16 @@
   }
   
   .nft-details .description-section {
-    width: 200%; /* Full width by default */
+    width: 200%; 
     word-break: break-all; 
   }
   
   /* Media query for larger screens to adjust the layout */
   @media (min-width: 768px) {
     .nft-details .description-section {
-      width: 48%; /* Adjust the width as needed */
+      width: 48%; 
       margin-top: -20px;
-      margin-left: 0px; /* Add space between the sections */
+      margin-left: 0px; 
     }
   }
 
@@ -142,7 +142,7 @@
   /* Buttons EDIT DELETE */
 
   .author-btns {
-    margin-top: 20px; /* Adjust the margin based on your design */
+    margin-top: 20px; 
     margin-right: 30px;
   }
   

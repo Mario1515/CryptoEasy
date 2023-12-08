@@ -2,22 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Teko:wght@500&display=swap');
 
 
-
-
 /* Comment section  */
 
 .comment {
     background: #41506b;
-    border: 1px solid #2fe3e7; /* Change border color to match the label color */
+    border: 1px solid #2fe3e7; 
     border-radius: 10px;
-    padding: 9px; /* Add padding for spacing inside the comment box */
-    margin-bottom: 7px; /* Add margin to separate comments */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add subtle box shadow for depth */
+    padding: 9px; 
+    margin-bottom: 7px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 
   }
 .comment p.text {
     font-size: 13px;
-    word-break: break-all; /* Break words when needed to prevent overflow */}
+    word-break: break-all; }
 
 h6.user {
     color: #2fe3e7;
@@ -44,9 +42,9 @@ p.text {
 
 .create-comment {
     background-color: #41506b;
-    padding: 15px; /* Add some padding for spacing */
+    padding: 15px;
     border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
     width: 467px;
     font-size: 16px;
     transition: all 0.3s ease;
@@ -62,20 +60,20 @@ p.text {
   }
   
   .comment-label {
-    font-size: 14px; /* Make the label text smaller */
-    color: #2fe3e7; /* Set label text color */
+    font-size: 14px;
+    color: #2fe3e7; 
 
   }
   
   .comment-form {
-    margin-top: 10px; /* Add some top margin to separate the label and the form */
+    margin-top: 10px; 
   
   }
   
   .comment-textarea {
-    width: 100%; /* Make the textarea full width */
-    padding: 10px; /* Add padding to the textarea */
-    margin-bottom: 10px; /* Add some bottom margin for spacing */
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 10px; 
     background: rgba(255, 255, 255, 0);
     border: 1px solid #ccc;
     padding-left: 15px;
@@ -83,15 +81,15 @@ p.text {
     font-size: 16px;
     color:#2fe3e7;
     
-    resize: vertical; /* Allow vertical resizing of the textarea */
+    resize: vertical;
   
   
   }
   
   .comment-textarea:focus {
-    outline: none; /* Remove the default focus outline */
+    outline: none; 
     transition: all 0.3s ease;
-    border-color: #1BFFFF; /* Change the border color when focused if needed */
+    border-color: #1BFFFF; 
   }
   .comment-btn {
   
@@ -166,9 +164,9 @@ p.text {
 
     .no-comment {
       background-color: #41506b;
-      padding: 15px; /* Add some padding for spacing */
+      padding: 15px; 
       border-radius: 20px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
       width: 467px;
       font-size: 16px;
       transition: all 0.3s ease;
@@ -182,12 +180,12 @@ p.text {
     .login-link-log {
       padding-bottom: 20px;
       color: #080808;
-      font-size: 16px; /* Adjust the initial font size */
-      transition: color 0.3s ease, text-shadow 0.3s ease, font-size 0.3s ease; /* Added transitions */
+      font-size: 16px; 
+      transition: color 0.3s ease, text-shadow 0.3s ease, font-size 0.3s ease; 
   }
   
   .login-link-log:hover {
       color: #080808df;
       text-decoration: none;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Added text shadow */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
   }

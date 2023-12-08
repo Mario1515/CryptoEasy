@@ -9,14 +9,14 @@
 }
 
 .about-text .btn {
-    margin-top: 100px !important; /* Adjust the top margin to change the button's position */
-    color: #ffffff !important;/* Change the text color of the button */
-    padding: 1x 20px; /* Adjust the padding for better button appearance */
+    margin-top: 100px !important; 
+    color: #ffffff !important;
+    padding: 1x 20px; 
     text-decoration: none;
     display: inline-block;
-    transition: background-color 0.3s; /* Add a smooth transition for hover effect */
+    transition: background-color 0.3s; 
 }
 
 .about-text .btn:hover {
-    background-color: #11999e !important; /* Change the hover color of the button */
+    background-color: #11999e !important; 
 }

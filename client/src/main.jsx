@@ -1,7 +1,8 @@
 import React from 'react'
 import { createRoot } from "react-dom/client";
-import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom';
+
+import App from './App.jsx'
 import ScrollToTop from './hooks/ScrollToTop.js';
 
 const root = createRoot(document.getElementById('root'));

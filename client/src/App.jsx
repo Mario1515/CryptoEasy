@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-
 import { CryptoProvider } from "./context/CryptoContext";
 import { AuthProvider } from "./context/AuthContext";
 import { NftProvider } from "./context/NftContext";

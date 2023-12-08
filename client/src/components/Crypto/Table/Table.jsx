@@ -1,8 +1,9 @@
-import React, { useContext, useState, useEffect } from "react";
-import { CryptoContext } from "../../../context/CryptoContext";
-import { NavLink, redirect } from "react-router-dom";
-import "./Table.css"; // Custom styling
+import React, { useContext, useState } from "react";
+
+import { CryptoContext } from "../../../context/CryptoContext"; 
 import CryptoDetails from "../CryptoDetails/CryptoDetails";
+
+import "./Table.css"; // Custom styling
 
 const Table = () => {
 

@@ -1,14 +1,15 @@
 import React from "react";
 import { NavLink, useParams, useNavigate } from "react-router-dom";
+import { useEffect, useContext } from "react";
+
 import SinglePageHead from "../../SinglePageHead/SingePageHead";
 import * as nftService from "../../../services/nftService";
-import { useEffect, useContext } from "react";
+
 import { AuthContext } from "../../../context/AuthContext";
 import { NftContext } from "../../../context/NftContext";
 import * as commentService from "../../../services/commentService";
 import CommentsSection from "../CommentsSection/CommentsSection";
 
-//todo
 import "./NFTDetails.css";
 
 const NFTDetails = () => {
@@ -17,7 +18,7 @@ const NFTDetails = () => {
   const { user, isAuthenticated } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  // HANDLING NFT DATA INFO WITH
+  // handling nft data
   const nftId = Object.values(useParams()).toString();
   const currentNft = selectNft(nftId);
 

@@ -1,14 +1,14 @@
 import React from "react";
+import { useContext } from "react";
+import { NavLink } from "react-router-dom";
+
 import * as nftService from "../../../services/nftService";
 import * as commentService from "../../../services/commentService";
 import { NftContext } from "../../../context/NftContext";
-import { useContext } from "react";
 import { timeNow } from "../../common/timeNow";
 import { AuthContext } from "../../../context/AuthContext";
-import { NavLink } from "react-router-dom";
 
 import "./CommentsSection.css";
-
 
 const CommentsSection = ({ currentNft, addComment }) => {
   const { fetchNftDetails } = useContext(NftContext);

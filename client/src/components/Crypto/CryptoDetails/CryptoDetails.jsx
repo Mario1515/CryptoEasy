@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+
 import { CryptoContext } from "../../../context/CryptoContext";
 import HighLowIndicator from "../../common/HighLowIndicator";
 import AllTimeCryptoPercentage from "../../common/AllTimeCryptoPercentage";

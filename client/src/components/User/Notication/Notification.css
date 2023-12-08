@@ -1,13 +1,11 @@
-/* The alert message box */
 .alert.error{
 	margin-top:30px;
 	padding: 20px;
-	background-color: #f01e2c; /* Red */
+	background-color: #f01e2c; 
 	color: white;
 	margin-bottom: 15px;
   }
   
-  /* The close button */
   .closebtn {
 	margin-left: 15px;
 	color: white;
@@ -19,14 +17,13 @@
 	transition: 0.3s;
   }
   
-  /* When moving the mouse over the close button */
   .closebtn:hover {
 	color: black;
   }
 
   .alert.success {
 	margin-top:30px;
-	background-color: #23ab59; /* Red */
+	background-color: #23ab59; 
 	color:white;
   }
   .alert.success.contact {

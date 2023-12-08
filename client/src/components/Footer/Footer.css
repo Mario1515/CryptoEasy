@@ -1,9 +1,9 @@
 .footer {
-    margin-top: auto; /* Push the footer to the bottom of the container */
+    margin-top: auto; 
     background: rgb(33, 37, 41);
     color: #ffffff;
     text-align: center;
-    padding: 20px; /* Adjust the padding as needed */
+    padding: 20px; 
   }
 
 .footer .footer-info {

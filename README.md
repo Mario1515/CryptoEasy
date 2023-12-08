@@ -54,7 +54,7 @@ The project is constructed with the following technologies:
 - Vite (Frontend Build Development Server)
 - Backend (NodeJS Softuni Server)
 - CoinGecko API
-- HTML + CSS (Free template from Theme Forest | Bootstrap CSS)
+- HTML + CSS (Bootstrap CSS)
 - EmailJS
 
 ## Installation:

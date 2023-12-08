@@ -5,7 +5,6 @@ import * as nftService from "../services/nftService";
 
 export const NftContext = createContext();
 
-
 const nftReducer = (state, action) => {
     switch (action.type) {
         case 'ADD_NFTS':

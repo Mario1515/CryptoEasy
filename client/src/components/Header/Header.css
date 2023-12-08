@@ -54,15 +54,15 @@
 
 /* Styling for the logo image */
 .logo .logo-btc {
-  width: 80px; /* Adjust the width as needed */
+  width: 80px; 
   height: 70px;
-  margin-right: -10px; /* Adjust the margin as needed */
-  text-decoration: none; /* Remove underline */
+  margin-right: -10px; 
+  text-decoration: none; 
 }
 
 .logo span {
   height: 70px;
-  font-size: 54px; /* Adjust the font size as needed */
+  font-size: 54px; 
   font-family: 'Teko', sans-serif;
   color:#00FFFF;
   text-decoration: none !important;

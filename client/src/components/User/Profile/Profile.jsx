@@ -1,12 +1,12 @@
 import React from "react";
+import { useEffect, useContext, useState } from "react";
+import { NavLink } from "react-router-dom";
+
 import * as userService from "../../../services/userService";
 import { AuthContext } from "../../../context/AuthContext";
-import { useEffect, useContext, useState } from "react";
 import SinglePageHead from "../../SinglePageHead/SingePageHead";
-import CreatorCard from "../../Creator/CreatorCard/CreatorCard";
-import { NavLink } from "react-router-dom";
-import "./Profile.css";
 
+import "./Profile.css";
 
 const Profile = () => {
   const { user } = useContext(AuthContext);

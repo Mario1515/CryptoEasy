@@ -7,7 +7,6 @@
 
   /* title */
 
-
 .card-title {
   position: absolute;
   background-color: #246371 !important;
@@ -66,10 +65,6 @@
 
 /* 
 image container */
-
-.image-container {
-  
-}
 
 .image {
   width: 200px !important;

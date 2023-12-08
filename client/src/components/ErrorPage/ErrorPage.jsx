@@ -1,5 +1,6 @@
-import SinglePageHead from "../SinglePageHead/SingePageHead"
 import { NavLink } from 'react-router-dom';
+
+import SinglePageHead from "../SinglePageHead/SingePageHead"
 import errorimage from "../../assets/404.png"
 
 import "./ErrorPage.css"
@@ -11,7 +12,6 @@ const ErrorPage = () => {
 		<div className="about wow fadeInUp" data-wow-delay="0.1s">
             <div className="container">
     
-
                     <div className="error-page-info">
                         <div className="section-header text-left">
                             <h2>You've encountered an error!</h2>

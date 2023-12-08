@@ -1,8 +1,8 @@
 import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
 import {  AuthContext } from "../../../context/AuthContext";
 import * as nftService from  "../../../services/nftService"
-
 import Notification from "../../User/Notication/Notification";
 import { NftContext } from "../../../context/NftContext";
 import { validateNftData } from '/src/components/common/validateNft.js';

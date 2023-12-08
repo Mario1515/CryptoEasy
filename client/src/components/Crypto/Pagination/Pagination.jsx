@@ -1,9 +1,7 @@
-import { useContext, useRef } from "react";
-import paginationArrow from "../../../assets/pagination-arrow.svg";
-import { CryptoContext, CryptoProvider } from "../../../context/CryptoContext";
+import { useContext } from "react";
+import { CryptoContext } from "../../../context/CryptoContext";
 
 import rightArrow from "../../../assets/right-arrow.png";
-
 
 import "./Pagination.css";
 

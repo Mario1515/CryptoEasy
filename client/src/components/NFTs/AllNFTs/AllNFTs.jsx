@@ -1,13 +1,12 @@
-import SinglePageHead from "../../SinglePageHead/SingePageHead";
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useState, useEffect} from "react";
+
+import SinglePageHead from "../../SinglePageHead/SingePageHead";
 import * as nftService from "../../../services/nftService";
 import SingleNFTCard from "../SingleNftCard/SingleNFTCard";
 import nftImage from "../../../assets/nft.png";
 
-
 import './AllNFTs.css'
-
 
 let initialState = []
 
@@ -37,7 +36,7 @@ const AllNFTs = () => {
 	 },[]);
 
 
-    // FILTERS
+    // Filters
 
     function showAll(e) {
 		e.preventDefault();

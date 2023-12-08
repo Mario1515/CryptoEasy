@@ -35,9 +35,9 @@
 /* Results List */
 .results-list {
   position: absolute;
-  top: calc(100% + 190px); /* Move it 20px below the form input */
+  top: calc(100% + 190px); 
   right: 37%;
-  width: 100%; /* Adjusted width */
+  width: 100%; 
   transform: translate(-50%, -50%);
   width: 26rem;
   max-height: 24rem;
@@ -46,7 +46,7 @@
   padding: 0.5rem;
   background-color: rgba(200, 200, 200, 0.6);
   backdrop-filter: blur(0.5rem);
-  z-index: 9000; /* Adjust the z-index as needed */
+  z-index: 9000; 
 }
 
 /* Loading Container */

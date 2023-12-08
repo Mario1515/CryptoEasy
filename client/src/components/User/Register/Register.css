@@ -130,7 +130,7 @@ form .input-box span.details{
    background: linear-gradient(to right, #3b3e93 , #1BFFFF);
  }
  form .button input:hover{
-  /* transform: scale(0.99); */
+
   background:#1BFFFF;
 	color:#211323;
   }
@@ -160,13 +160,13 @@ form .user-details .input-box{
 }
 
 .input-box input[name="user_imageUrl"] {
-  width: 140%; /* You can adjust the width as needed */
-  box-sizing: border-box; /* Include padding and border in the width */
-  margin-left: 100px; /* Adjust the margin-left as needed */
+  width: 140%; 
+  box-sizing: border-box; 
+  margin-left: 100px; 
 }
 
 .input-box span.details.avatar-label {
-  margin-left: 110px; /* Adjust the margin-left as needed */
+  margin-left: 110px; 
 }
 
 
@@ -176,6 +176,6 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-background-clip: text;
   -webkit-text-fill-color: #2fe3e7;
-  box-shadow: 0 0 0 1000px #41506b inset !important; /* Background color for autofilled input */
+  box-shadow: 0 0 0 1000px #41506b inset !important; 
   transition: background-color 5000s ease-in-out 0s;
 }

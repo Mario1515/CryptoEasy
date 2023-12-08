@@ -7,9 +7,6 @@ import { NftContext } from "../../context/NftContext";
 
 const NftOwner = ({ children }) => {
 
-    
-    // receives undefined TODO
-
     const { selectNft } = useContext(NftContext);
 
     const { user, isAuthenticated } = useAuthContext();

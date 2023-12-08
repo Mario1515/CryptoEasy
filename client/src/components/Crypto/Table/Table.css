@@ -1,9 +1,7 @@
-/* table.css */
-
 
 .table-frame {
   border: #dee2e6;
-  border-radius: 0.5rem; /* Adjust the border-radius for round corners */
+  border-radius: 0.5rem; 
   overflow: hidden;
   width: 60%;
   margin: auto;
@@ -17,11 +15,11 @@
   background-color: #343a40;
   color: white;
   border-collapse: collapse;
-  font-size: 14px; /* Adjust the font size */
+  font-size: 14px; 
 }
 
 .table th, .table td {
-  padding: 0.rem; /* Adjust the padding */
+  padding: 0.rem; 
   vertical-align: top;
   border-top: 1px solid #dee2e6;
 }
@@ -76,9 +74,9 @@
 }
 
 .table img {
-  width: 1rem; /* Adjust the width */
-  height: 1rem; /* Adjust the height */
-  margin-right: 0.5rem; /* Add margin for spacing if needed */
+  width: 1rem; 
+  height: 1rem; 
+  margin-right: 0.5rem; 
   cursor: pointer;
 }
 
@@ -95,17 +93,17 @@
 }
 
 body {
-  background-color: #00FFFF; /* Set your desired background color */
+  background-color: #00FFFF; 
 }
 
 
 /* Spinner */
 
 .cool-box {
-  border: 2px solid #343a40; /* Border color */
-  padding: 20px; /* Adjust padding as needed */
-  border-radius: 10px; /* Adjust border radius for rounded corners */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow */
+  border: 2px solid #343a40; 
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .container-spinner {
@@ -116,26 +114,24 @@ body {
 }
 
 .spinner {
-  margin-right: 8px; /* Adjust margin as needed */
+  margin-right: 8px; 
 }
 
 .text {
-  font-size: 1rem; /* Adjust font size as needed */
+  font-size: 1rem; 
 }
 
 
-/* api provider */
-
 .text-coin {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Set the default text color */
+  text-decoration: none; 
+  color: inherit; 
   font-weight: 600;
 
   transition: color 0.3s ease;
 
   &:hover {
-    text-decoration: none; /* Remove underline on hover */
-    color: black; /* Change text color on hover */
+    text-decoration: none; 
+    color: black; 
     font-weight: 900;
     transform: translateY(-5px) scale(1.2);
   }

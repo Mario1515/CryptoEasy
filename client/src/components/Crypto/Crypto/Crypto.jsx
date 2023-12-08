@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Table from "../Table/Table";
 import Filters from '../Filters/Filters';
 import SinglePageHead from '../../SinglePageHead/SingePageHead';
@@ -11,7 +12,7 @@ const Crypto = () => {
       <div className="crypto-header">
         <h2>Crypto Data</h2>
         <p>Explore the latest cryptocurrency information</p>
-      </div>
+      </div> 
       <SinglePageHead pageInfo={{name:'Crypto Prices', slug:'crypto' }} />
       <Filters />
       <Search />
