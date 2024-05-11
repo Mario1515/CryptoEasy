@@ -36,7 +36,7 @@ const App = () => {
               <Route path="/nft-details/:id" exact element={<NFTDetails />} />
               <Route path="/createnft" element={(
                 <PrivateRoute>
-                  <CreateNft />
+                  <CreateNFT />
                 </PrivateRoute>
               )} />
               <Route path="/edit/:nftId/edit" element={(
