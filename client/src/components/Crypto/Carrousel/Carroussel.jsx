@@ -1,5 +1,4 @@
-import Carousel from 'react-bootstrap/Carousel';
-
+import {Carousel} from "react-bootstrap";
 import { testCryptoData } from "../../common/testCryptoData";
 import TrendingCrypto from '../TrendingCrypto/TrendingCrypto';
 
