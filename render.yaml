@@ -5,8 +5,6 @@ services:
     rootDir: client
     buildCommand: npm install
     startCommand: npm run dev
-  
-
   - name: server
     type: web
     rootDir: server
