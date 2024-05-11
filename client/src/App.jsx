@@ -12,8 +12,8 @@ import Footer from "./components/Footer/Footer";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Logout from "./components/User/Logout/Logout";
 import AllNFTs from "./components/NFTs/AllNFTs/AllNFTs";
-import CreateNft from "./components/NFTs/CreateNft/CreateNft.jsx";
-import NFTDetails from "./components/NFTs/NftDetails/NFTDetails"
+import CreateNFT from "./components/NFTs/CreateNFT/CreateNFT.jsx";
+import NFTDetails from "./components/NFTs/NFTDetails/NFTDetails"
 import PrivateRoute from "./components/common/PrivateRoute";
 import EditNft from "./components/NFTs/EditNft/EditNft";
 import Contact from "./components/Contact/Contact.jsx";

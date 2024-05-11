@@ -3,7 +3,7 @@ import { useState, useEffect} from "react";
 
 import SinglePageHead from "../../SinglePageHead/SingePageHead";
 import * as nftService from "../../../services/nftService";
-import SingleNFTCard from "../SingleNftCard/SingleNFTCard";
+import SingleNFTCard from "../SingleNFTCard/SingleNFTCard";
 import nftImage from "../../../assets/nft.png";
 
 import './AllNFTs.css'
