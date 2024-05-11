@@ -2,16 +2,13 @@
 services:
   - name: client
     type: web
+    rootDir: client
     buildCommand: npm install
     startCommand: npm run dev
-    github:
-      branch: main
-      dir: client 
+  
 
   - name: server
     type: web
+    rootDir: server
     buildCommand: npm install
     startCommand: node server
-    github:
-      branch: main
-      dir: server
