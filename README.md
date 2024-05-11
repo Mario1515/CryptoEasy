@@ -2,6 +2,8 @@
 
 ## About The Project - Non-technical Description
 
+View Live - https://cryptoeasy1.onrender.com/
+
 Crypto Easy React Project is a product of Mario Petkov, a passionate developer dedicated to exploring the vast landscape of React.js. This innovative project was conceived as part of the React.js Softuni Course.
 
 ### Project Vision:
@@ -58,6 +60,9 @@ The project is constructed with the following technologies:
 - EmailJS
 
 ## Installation:
+
+View Live
+https://cryptoeasy1.onrender.com/
 
 Getting started is a breeze:
 1. Clone the repository to your local machine.
