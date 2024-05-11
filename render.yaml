@@ -4,16 +4,14 @@ services:
     type: web
     buildCommand: npm install
     startCommand: npm run dev
-    env:
-      - key: NODE_ENV
-        value: production
-    directory: client
+    github:
+      branch: main
+      dir: client 
 
   - name: server
     type: web
     buildCommand: npm install
     startCommand: node server
-    env:
-      - key: NODE_ENV
-        value: production
-    directory: server
+    github:
+      branch: main
+      dir: server
